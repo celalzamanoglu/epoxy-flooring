@@ -1,36 +1,209 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ugur Epoxy Flooring - Landing Page
 
-## Getting Started
+A modern, responsive landing page for Ugur Epoxy Flooring company built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Smooth Scrolling**: Implemented using Lenis for buttery-smooth scroll experience
+- **Animated Sections**: Beautiful scroll-triggered animations using Framer Motion
+- **Responsive Design**: Mobile-first approach ensuring perfect display on all devices
+- **Modern UI/UX**: Gradient backgrounds, glass morphism effects, and contemporary design
+- **SEO Optimized**: Comprehensive meta tags, Open Graph, and Twitter Cards
+- **Performance Focused**: Optimized for Core Web Vitals and fast loading times
+- **Accessibility**: WCAG compliant with proper focus states and semantic HTML
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion
+- **Smooth Scrolling**: Lenis
+- **Icons**: Lucide React
+- **Font**: Inter (Google Fonts)
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── globals.css          # Global styles and Tailwind imports
+│   ├── layout.tsx          # Root layout with metadata
+│   └── page.tsx            # Main page component
+└── components/
+    ├── SmoothScrollProvider.tsx  # Lenis smooth scroll setup
+    ├── HeroSection.tsx          # Hero section with navigation
+    ├── AboutSection.tsx         # About company section
+    ├── ServicesSection.tsx      # Services offered section
+    ├── GallerySection.tsx       # Portfolio gallery section
+    ├── TestimonialsSection.tsx  # Customer testimonials
+    └── ContactSection.tsx       # Contact form and info
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Design Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Hero Section
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Full-screen hero with gradient background
+- Smooth fade-in animations
+- Call-to-action buttons with hover effects
+- Animated scroll indicator
 
-## Learn More
+### About Section
 
-To learn more about Next.js, take a look at the following resources:
+- Statistics cards with animated counters
+- Feature list with icons
+- Staggered animations for content reveal
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Services Section
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 6 service cards with hover animations
+- Glass morphism effect
+- SVG background patterns
 
-## Deploy on Vercel
+### Gallery Section
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Interactive project showcase
+- Modal overlay for project details
+- Hover effects and smooth transitions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Testimonials Section
+
+- Customer review cards
+- Star ratings
+- Quote icons and styling
+
+### Contact Section
+
+- Functional contact form
+- Contact information cards
+- Gradient backgrounds and animations
+
+## 🚦 Getting Started
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <repository-url>
+   cd ugur-epoxy-flooring
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: 320px - 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: 1024px+
+
+## 🎯 Performance Optimizations
+
+- Lazy loading for animations
+- Optimized images and assets
+- Minimal JavaScript bundle
+- CSS-in-JS for critical styles
+- Proper semantic HTML structure
+
+## 🔧 Customization
+
+### Colors
+
+Primary colors can be modified in `tailwind.config.js`:
+
+- Blue: `#3b82f6`
+- Purple: `#8b5cf6`
+- Cyan: `#06b6d4`
+
+### Animations
+
+Animation settings can be adjusted in component files:
+
+- Duration
+- Easing functions
+- Trigger points
+- Stagger delays
+
+### Content
+
+All content can be easily modified by editing the respective component files:
+
+- Company information in `AboutSection.tsx`
+- Services in `ServicesSection.tsx`
+- Testimonials in `TestimonialsSection.tsx`
+- Contact details in `ContactSection.tsx`
+
+## 📧 Contact Form Integration
+
+The contact form is ready for integration with:
+
+- Email services (SendGrid, Mailgun)
+- CRM systems (HubSpot, Salesforce)
+- Custom backend APIs
+
+## 🔍 SEO Features
+
+- Semantic HTML structure
+- Meta tags optimization
+- Open Graph tags
+- Twitter Cards
+- Schema markup ready
+- Sitemap friendly URLs
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+```bash
+npm run build
+vercel --prod
+```
+
+### Netlify
+
+```bash
+npm run build
+netlify deploy --prod --dir=out
+```
+
+### Custom Server
+
+```bash
+npm run build
+npm start
+```
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## 📞 Support
+
+For support or questions about this project, please contact:
+
+- Email: support@ugurepoxyfloor.com
+- Phone: +1 (555) 123-4567
+
+---
+
+Built with ❤️ by the Ugur Epoxy Flooring team
