@@ -1,0 +1,87 @@
+.container {
+  height: 300vh;
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+  overflow: hidden;
+  top: 0;
+  height: 100vh;
+  background: #1C1C1C;
+}
+
+.el {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageContainer {
+  position: relative;
+  width: 25vw;
+  height: 25vh;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Positioning specific cells like tutorial nth-of-type selectors */
+/* center */
+.el:nth-of-type(1) .imageContainer {
+  top: 0;
+  left: 0vw;
+  width: 30vw;
+  height: 30vh;
+}
+/* top center */
+.el:nth-of-type(2) .imageContainer {
+  top: -30.8vh;
+  left: 0vw;
+  width: 30vw;
+  height: 30vh;
+}
+
+/* top left */
+.el:nth-of-type(3) .imageContainer {
+  top: -23vh;
+  left: -32vw;
+  width: 31vw;
+  height: 45vh;
+}
+
+/* top right */
+.el:nth-of-type(4) .imageContainer {
+  top: -23vh;
+  left: 32vw;
+  width: 31vw;
+  height: 45vh;
+}
+
+/* bottom center */
+.el:nth-of-type(5) .imageContainer {
+  top: 30.8vh;
+  left: 0vw;
+  width: 30vw;
+  height: 30vh;
+
+}
+
+/* bottom left */
+.el:nth-of-type(6) .imageContainer {
+  top: 23vh;
+  left: -32vw;
+  width: 31vw;
+  height: 45vh;
+}
+
+/* bottom right */
+.el:nth-of-type(7) .imageContainer {
+  top: 23vh;
+  left: 32vw;
+  width: 31vw;
+  height: 45vh;
+} 
