@@ -18,7 +18,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="mt-[50vh] mb-[100vh]">
+    <main className="mt-[50vh] mb-[100vh] bg-[#222]">
       <HeroSection />
       <NumbersSection />
     </main>
