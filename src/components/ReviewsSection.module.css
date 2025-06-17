@@ -1,0 +1,77 @@
+.section {
+  width: 100%;
+  padding: 80px 0 60px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  overflow: hidden;
+}
+
+.row, .rowReverse {
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.track {
+  display: flex;
+  gap: 1.1rem;
+  animation: slideLeft 40s linear infinite;
+}
+
+.rowReverse .track {
+  animation: slideRight 40s linear infinite;
+}
+
+@keyframes slideLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes slideRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.card {
+  background: #222525;
+  border-radius: 18px;
+  border: 1px solid #2f2f2f;
+  padding: 1.5rem 1rem;
+  min-width: 400px;
+  max-width: 440px;
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 260px;
+}
+
+.name {
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.text {
+  color: #fff;
+  font-size: 1.04rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .card {
+    min-width: 280px;
+    max-width: 340px;
+    padding: 0.7rem 1.2rem;
+    height: 200px;
+  }
+  .track {
+    gap: 0.5rem;
+  }
+} 
