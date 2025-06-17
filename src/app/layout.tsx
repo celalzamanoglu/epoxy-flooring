@@ -8,25 +8,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ugur Epoxy Flooring | Premium Epoxy Floor Solutions in Arizona",
+  title: "Milkyway Epoxy Flooring | Premium Epoxy Floor Solutions in Arizona",
   description:
     "Transform your space with professional epoxy flooring solutions. Residential, commercial, and industrial epoxy floor coatings in Phoenix, AZ. Free quotes available.",
   keywords:
     "epoxy flooring, garage floor coating, industrial flooring, commercial flooring, Phoenix Arizona, floor coating, concrete coating",
-  authors: [{ name: "Ugur Epoxy Flooring" }],
-  creator: "Ugur Epoxy Flooring",
+  authors: [{ name: "Milkyway Epoxy Flooring" }],
+  creator: "Milkyway Epoxy Flooring",
   openGraph: {
-    title: "Ugur Epoxy Flooring | Premium Epoxy Floor Solutions",
+    title: "Milkyway Epoxy Flooring | Premium Epoxy Floor Solutions",
     description:
       "Professional epoxy flooring solutions for residential, commercial, and industrial spaces in Arizona.",
-    url: "https://ugurepoxyfloor.com",
-    siteName: "Ugur Epoxy Flooring",
+    url: "https://milkywayepoxy.com",
+    siteName: "Milkyway Epoxy Flooring",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Ugur Epoxy Flooring - Premium Floor Solutions",
+        alt: "Milkyway Epoxy - Premium Floor Solutions",
       },
     ],
     locale: "en_US",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ugur Epoxy Flooring | Premium Epoxy Floor Solutions",
+    title: "Milkyway Epoxy | Premium Epoxy Floor Solutions",
     description:
       "Professional epoxy flooring solutions for residential, commercial, and industrial spaces in Arizona.",
     images: ["/og-image.jpg"],
