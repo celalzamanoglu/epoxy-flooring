@@ -1,0 +1,256 @@
+.section {
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  background: transparent;
+  gap: 4vw;
+}
+
+.hexagonWrapper {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hexagon {
+  width: 620px;
+  height: 700px;
+  clip-path: polygon(
+    20% 5%, 75% 3%,
+    108% 50%, 75% 98%,
+    20% 95%, -6% 50%
+  );
+  border-radius: 290px;
+  transform: rotate(30deg);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.ctaContent {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 320px;
+  max-width: 500px;
+  padding-left: 2vw;
+}
+
+.imageListContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vw;
+  z-index: 2;
+}
+
+.imageList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.slideUp {
+  animation: slideUpInfinite 36s linear infinite;
+}
+
+.slideUpReverse {
+  animation: slideUpReverseInfinite 36s linear infinite;
+}
+
+@keyframes slideUpInfinite {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes slideUpReverseInfinite {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+.ctaSmall {
+  font-size: 1.05rem;
+  color: #b3f0e6;
+  font-weight: 500;
+  margin-bottom: 1.1rem;
+  letter-spacing: 0.01em;
+}
+
+.ctaBig {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 2.1rem;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+.ctaFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.ctaFeature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.featureTitle {
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #fff;
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+.featureDesc {
+  font-size: 1.01rem;
+  color: #bdbdbd;
+  font-weight: 400;
+  display: block;
+}
+
+.ctaDesc {
+  color: #e6e6e6;
+  font-size: 1.13rem;
+  margin-bottom: 2.2rem;
+  margin-top: 0.7rem;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 0.7rem;
+  background: linear-gradient(90deg, #b16cea 0%, #6ea8fa 100%);
+  color: #fff;
+  font-size: 1.13rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 2rem;
+  padding: 1.1rem 4.2rem 1.1rem 2.2rem;
+  min-width: 260px;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.ctaButton:hover {
+  background: linear-gradient(90deg, #6ea8fa 0%, #b16cea 100%);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+}
+.arrowCircle {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1100px) {
+  .section {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 60px 0;
+  }
+  .hexagon {
+    width: 340px;
+    height: 380px;
+  }
+  .ctaContent {
+    min-width: 0;
+    max-width: 100vw;
+    padding-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+  .imageListContainer {
+    gap: 1vw;
+  }
+  .imageList {
+    gap: 0.7rem;
+    width: 48%;
+  }
+  .imageWrapper {
+    border-radius: 10px;
+    aspect-ratio: 3/4;
+  }
+  .image {
+    border-radius: 10px;
+  }
+  .ctaSmall {
+    font-size: 0.98rem;
+  }
+  .ctaBig {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .ctaFeatures {
+    gap: 0.7rem;
+    margin-bottom: 1.2rem;
+  }
+  .ctaDesc {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .ctaButton {
+    font-size: 1rem;
+    min-width: 180px;
+    padding: 0.8rem 2.2rem 0.8rem 1.2rem;
+  }
+  .arrowCircle {
+    right: 0.7rem;
+  }
+} 
