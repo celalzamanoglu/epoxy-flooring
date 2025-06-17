@@ -1,6 +1,7 @@
 "use client";
 
 import { HeroSection } from "@/components/HeroSection";
+import NumbersSection from "@/components/NumbersSection";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
@@ -19,6 +20,7 @@ export default function Home() {
   return (
     <main className="mt-[50vh] mb-[100vh]">
       <HeroSection />
+      <NumbersSection />
     </main>
   );
 }
