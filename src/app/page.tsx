@@ -5,6 +5,7 @@ import NumbersSection from "@/components/NumbersSection";
 import LearnMoreCards from "@/components/LearnMoreCardsSection";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
+import ReviewsSection from "@/components/ReviewsSection";
 
 export default function Home() {
   useEffect(() => {
@@ -19,10 +20,11 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="mt-[50vh] mb-[100vh] bg-[#222]">
+    <main className="mt-[50vh] mb-[100vh] bg-[#1C1C1C]">
       <HeroSection />
       <NumbersSection />
       <LearnMoreCards />
+      <ReviewsSection />
     </main>
   );
 }
