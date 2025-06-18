@@ -26,6 +26,16 @@
   background-size: cover;
   background-position: center;
   box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 60px rgba(0,0,0,0.3),
+    0 0 40px rgba(177, 108, 234, 0.3),
+    0 0 80px rgba(110, 168, 250, 0.2);
 }
 
 .overlay {
