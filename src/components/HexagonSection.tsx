@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./HexagonSection.module.css";
 import { motion, useInView } from "framer-motion";
+import Button from "./Button";
 
 export interface HexagonSectionProps {
   hexagonPosition?: "left" | "right";
@@ -43,27 +44,6 @@ const CheckIcon = () => (
         d="M9 14.5l3 3 6-6"
         stroke="#fff"
         strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  </span>
-);
-
-const ArrowIcon = () => (
-  <span className={styles.arrowCircle}>
-    <svg
-      width="32"
-      height="32"
-      viewBox="0 0 32 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <circle cx="16" cy="16" r="16" fill="#fff" fillOpacity="0.25" />
-      <path
-        d="M13 11l6 5-6 5"
-        stroke="#fff"
-        strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -115,10 +95,7 @@ const HexagonSection: React.FC<HexagonSectionProps> = ({
         ))}
       </ul>
       <p className={styles.ctaDesc}>{ctaDesc}</p>
-      <button className={styles.ctaButton}>
-        {buttonText}
-        <ArrowIcon />
-      </button>
+      <Button>{buttonText}</Button>
     </div>
   );
 

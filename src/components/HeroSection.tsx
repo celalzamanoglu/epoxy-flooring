@@ -2,7 +2,9 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useMemo } from "react";
+
 import styles from "./HeroSection.module.css";
+import HeroContent from "./HeroContent";
 
 interface Cell {
   id: string;
@@ -24,6 +26,8 @@ export function HeroSection() {
 
   // Single scale transform for the entire grid
   const scale = useTransform(scrollYProgress, [0, 0.8], [4, 1]);
+  // Content scales up as parent zooms out
+  const contentScale = useTransform(scrollYProgress, [0, 0.3], [0.3, 0.4]);
 
   // Memoize cells array to prevent unnecessary re-renders
   const cells: Cell[] = useMemo(
@@ -106,39 +110,9 @@ export function HeroSection() {
                   } overflow-hidden ${cell.imageStyle || ""}`}
                 >
                   {cell.isHero ? (
-                    // Hero Content
-                    <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">
-                      {/* Background Image */}
-                      <div className={`absolute inset-0 ${cell.imageStyle}`} />
-
-                      {/* Blurred Glass Effect Overlay */}
-                      <div className="absolute inset-0 bg-black/20" />
-
-                      <motion.h1
-                        initial={{ y: 30, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight relative z-10"
-                      >
-                        Transform Your
-                        <br />
-                        <span>Floors</span>
-                      </motion.h1>
-
-                      <motion.p
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                        className="text-xs md:text-sm text-gray-200 mb-4 leading-relaxed max-w-xs relative z-10"
-                      >
-                        Professional epoxy flooring solutions that combine
-                        durability, beauty, and innovation.
-                      </motion.p>
-                    </div>
+                    <HeroContent contentScale={contentScale} />
                   ) : (
-                    // Epoxy Flooring Images
                     <div className="relative h-full w-full">
-                      {/* Background Image */}
                       <div className={`absolute inset-0 ${cell.imageStyle}`} />
                     </div>
                   )}

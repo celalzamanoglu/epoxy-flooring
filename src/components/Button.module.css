@@ -1,0 +1,33 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 0.7rem;
+  background: linear-gradient(90deg, #b16cea 0%, #6ea8fa 100%);
+  color: #fff;
+  font-size: 1.13rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 2rem;
+  padding: 1.1rem 4.2rem 1.1rem 2.2rem;
+  min-width: 260px;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.button:hover {
+  background: linear-gradient(90deg, #6ea8fa 0%, #b16cea 100%);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+}
+
+.arrowCircle {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
