@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./HexagonSection.module.css";
+import { motion, useInView } from "framer-motion";
 
 export interface HexagonSectionProps {
   hexagonPosition?: "left" | "right";
@@ -78,8 +79,11 @@ const HexagonSection: React.FC<HexagonSectionProps> = ({
   ctaDesc = "Get a stunning, long-lasting floor with our expert epoxy installation. Fast, clean, and fully customized for your home or business. Discover the Milkyway difference today!",
   buttonText = "SCHEDULE A FREE QUOTE",
 }) => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   const content = (
-    <div className={styles.ctaContent}>
+    <div className={styles.ctaContent} ref={ref}>
       <span className={styles.ctaSmall}>{ctaSmall}</span>
       <h2 className={styles.ctaBig}>
         {ctaBig.split("\n").map((line, i) => (
@@ -90,14 +94,24 @@ const HexagonSection: React.FC<HexagonSectionProps> = ({
         ))}
       </h2>
       <ul className={styles.ctaFeatures}>
-        {features.map((f) => (
-          <li className={styles.ctaFeature} key={f.title}>
+        {features.map((f, index) => (
+          <motion.li
+            className={styles.ctaFeature}
+            key={f.title}
+            initial={{ y: 30, opacity: 0 }}
+            animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: isInView ? 0.2 + index * 0.2 : 0,
+              ease: "easeOut",
+            }}
+          >
             <CheckIcon />
             <div>
               <span className={styles.featureTitle}>{f.title}</span>
               <span className={styles.featureDesc}>{f.desc}</span>
             </div>
-          </li>
+          </motion.li>
         ))}
       </ul>
       <p className={styles.ctaDesc}>{ctaDesc}</p>
