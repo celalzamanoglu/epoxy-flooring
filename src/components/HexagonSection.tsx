@@ -94,7 +94,18 @@ const HexagonSection: React.FC<HexagonSectionProps> = ({
           </motion.li>
         ))}
       </ul>
-      <p className={styles.ctaDesc}>{ctaDesc}</p>
+      <motion.p
+        className={styles.ctaDesc}
+        initial={{ y: 30, opacity: 0 }}
+        animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+        transition={{
+          duration: 0.6,
+          delay: isInView ? 0.2 + features.length * 0.2 : 0,
+          ease: "easeOut",
+        }}
+      >
+        {ctaDesc}
+      </motion.p>
       <Button>{buttonText}</Button>
     </div>
   );
@@ -124,15 +135,24 @@ const HexagonSection: React.FC<HexagonSectionProps> = ({
 
   return (
     <section className={styles.section}>
-      {hexagonPosition === "left" ? (
+      {window.innerWidth <= 1100 ? (
         <>
-          {hexagon}
           {content}
+          {hexagon}
         </>
       ) : (
         <>
-          {content}
-          {hexagon}
+          {hexagonPosition === "left" ? (
+            <>
+              {hexagon}
+              {content}
+            </>
+          ) : (
+            <>
+              {content}
+              {hexagon}
+            </>
+          )}
         </>
       )}
     </section>
