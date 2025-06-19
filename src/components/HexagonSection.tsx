@@ -60,7 +60,11 @@ const HexagonSection: React.FC<HexagonSectionProps> = ({
   buttonText = "SCHEDULE A FREE QUOTE",
 }) => {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-50px",
+    amount: 0.3,
+  });
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
@@ -75,7 +79,7 @@ const HexagonSection: React.FC<HexagonSectionProps> = ({
   }, []);
 
   const content = (
-    <div className={styles.ctaContent} ref={ref}>
+    <div className={styles.ctaContent}>
       <span className={styles.ctaSmall}>{ctaSmall}</span>
       <h2 className={styles.ctaBig}>
         {ctaBig.split("\n").map((line, i) => (
@@ -146,7 +150,7 @@ const HexagonSection: React.FC<HexagonSectionProps> = ({
   );
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} ref={ref}>
       {isMobile ? (
         <>
           {content}
