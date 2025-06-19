@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 80px 0;
+  padding: 80px 40px;
   background: transparent;
 }
 
@@ -12,6 +12,8 @@
   gap: 6rem;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 1400px;
 }
 
 .card {
@@ -84,13 +86,28 @@
 /* Remove the arrowCircle styles as they're now in Button.module.css */
 
 @media (max-width: 1000px) {
+  .section {
+    padding: 80px 30px;
+  }
+  
   .cardsContainer {
     flex-direction: column;
     gap: 4rem;
   }
   .card {
-    width: 98vw;
+    width: 100%;
     max-width: 650px;
     height: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 60px 20px;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 100%;
   }
 } 
