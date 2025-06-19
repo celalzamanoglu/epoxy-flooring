@@ -61,6 +61,18 @@ const HexagonSection: React.FC<HexagonSectionProps> = ({
 }) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 1100);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   const content = (
     <div className={styles.ctaContent} ref={ref}>
@@ -135,7 +147,7 @@ const HexagonSection: React.FC<HexagonSectionProps> = ({
 
   return (
     <section className={styles.section}>
-      {window.innerWidth <= 1100 ? (
+      {isMobile ? (
         <>
           {content}
           {hexagon}
