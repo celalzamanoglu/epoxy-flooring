@@ -48,23 +48,35 @@ export function HeroSection() {
 
   // Define the end scale for the content based on screen size
   // It shrinks less on smaller screens to prevent overflow
+  const contentStartScale = isXLargeScreen
+    ? 0.9
+    : isLargeScreen
+    ? 0.9
+    : isMediumScreen
+    ? 0.8
+    : isSmallScreen
+    ? 0.8
+    : isXSmallScreen
+    ? 0.8
+    : 0.5;
+
   const contentEndScale = isXLargeScreen
     ? 0.6
     : isLargeScreen
-    ? 0.4
+    ? 0.35
     : isMediumScreen
-    ? 0.35
+    ? 0.3
     : isSmallScreen
-    ? 0.35
+    ? 0.55
     : isXSmallScreen
-    ? 0.35
+    ? 0.55
     : 0.5;
 
   // Inverse scale for the content to maintain proportional size
   const contentScale = useTransform(
     scrollYProgress,
     [0, 0.8],
-    [1, contentEndScale]
+    [contentStartScale, contentEndScale]
   );
 
   // Original 7-cell layout for larger screens
