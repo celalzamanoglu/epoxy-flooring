@@ -85,6 +85,62 @@
   height: 45vh;
 }
 
+/* Responsive Layout: For Medium screens and below */
+@media (max-width: 1024px) {
+  /* Hide the side cells to create a single vertical column */
+  .el:nth-of-type(3),
+  .el:nth-of-type(4),
+  .el:nth-of-type(6),
+  .el:nth-of-type(7) {
+    display: none;
+  }
+
+  /* Resize the remaining cells to fit the viewport better */
+
+  /* Center hero cell */
+  .el:nth-of-type(1) .imageContainer {
+    width: 80vw;
+    height: 35vh;
+  }
+
+  /* Top center cell */
+  .el:nth-of-type(2) .imageContainer {
+    width: 80vw;
+    height: 30vh;
+    top: -35vh; /* Adjust vertical spacing */
+  }
+
+  /* Bottom center cell */
+  .el:nth-of-type(5) .imageContainer {
+    width: 80vw;
+    height: 30vh;
+    top: 35vh; /* Adjust vertical spacing */
+  }
+}
+
+/* Further adjustments for x-small screens */
+@media (max-width: 767px) {
+  /* Center hero cell */
+  .el:nth-of-type(1) .imageContainer {
+    width: 85vw; /* Ensure all cells are the same width */
+    height: 33vh;
+  }
+
+  /* Top center cell */
+  .el:nth-of-type(2) .imageContainer {
+    width: 85vw; /* Ensure all cells are the same width */
+    height: 28vh;
+    top: -33vh;
+  }
+
+  /* Bottom center cell */
+  .el:nth-of-type(5) .imageContainer {
+    width: 85vw; /* Ensure all cells are the same width */
+    height: 28vh;
+    top: 33vh;
+  }
+}
+
 .heroContentWrapper {
   position: relative;
   width: 100%;

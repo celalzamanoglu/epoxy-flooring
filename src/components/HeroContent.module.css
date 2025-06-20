@@ -7,6 +7,20 @@
   justify-content: center;
 }
 
+@media (max-width: 1024px) {
+  .heroContentWrapper {
+    width: 80vw;
+    height: 35vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .heroContentWrapper {
+    width: 85vw;
+    height: 33vh;
+  }
+}
+
 .heroOverlay {
   position: absolute;
   inset: 0;
