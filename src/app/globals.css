@@ -21,7 +21,7 @@
 }
 
 html {
-  /* Removed scroll-behavior since we're using Lenis */
+  /* Lenis works best with the default scroll behavior */
 }
 
 body {
@@ -34,8 +34,8 @@ body {
     rgb(var(--background-start-rgb));
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
+  /* Only prevent horizontal overflow */
   overflow-x: hidden;
-  /* Removed scroll-behavior since we're using Lenis */
 }
 
 /* Custom scrollbar */

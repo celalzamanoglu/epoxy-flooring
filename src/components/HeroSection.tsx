@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 
 import styles from "./HeroSection.module.css";
 import HeroContent from "./HeroContent";
@@ -17,6 +17,25 @@ interface Cell {
 
 export function HeroSection() {
   const container = useRef(null);
+  const [isXLargeScreen, setIsXLargeScreen] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+  const [isMediumScreen, setIsMediumScreen] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isXSmallScreen, setIsXSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsXLargeScreen(window.innerWidth >= 1920);
+      setIsLargeScreen(window.innerWidth >= 1280);
+      setIsMediumScreen(window.innerWidth >= 1024);
+      setIsSmallScreen(window.innerWidth >= 768);
+      setIsXSmallScreen(window.innerWidth < 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   // Track scroll progress for the hero section
   const { scrollYProgress } = useScroll({
@@ -24,12 +43,31 @@ export function HeroSection() {
     offset: ["start start", "end end"],
   });
 
-  // Single scale transform for the entire grid
-  const scale = useTransform(scrollYProgress, [0, 0.8], [4, 1]);
-  // Content scales up as parent zooms out
-  const contentScale = useTransform(scrollYProgress, [0, 0.3], [0.3, 0.4]);
+  // Scale the grid
+  const gridScale = useTransform(scrollYProgress, [0, 0.8], [3.8, 1]);
 
-  // Memoize cells array to prevent unnecessary re-renders
+  // Define the end scale for the content based on screen size
+  // It shrinks less on smaller screens to prevent overflow
+  const contentEndScale = isXLargeScreen
+    ? 0.6
+    : isLargeScreen
+    ? 0.4
+    : isMediumScreen
+    ? 0.35
+    : isSmallScreen
+    ? 0.35
+    : isXSmallScreen
+    ? 0.35
+    : 0.5;
+
+  // Inverse scale for the content to maintain proportional size
+  const contentScale = useTransform(
+    scrollYProgress,
+    [0, 0.8],
+    [1, contentEndScale]
+  );
+
+  // Original 7-cell layout for larger screens
   const cells: Cell[] = useMemo(
     () => [
       {
@@ -88,37 +126,46 @@ export function HeroSection() {
   );
 
   return (
-    <section>
+    <section className={styles.heroSectionRoot}>
       {/* Main Container */}
       <div ref={container} className={styles.container}>
         {/* Sticky Container */}
         <div className={styles.sticky}>
-          {/* Single motion.div wrapping all cells */}
+          {/* Scaled grid background */}
           <motion.div
             style={{
-              scale: scale,
+              scale: gridScale,
               willChange: "transform",
             }}
             className="relative w-full h-full"
           >
             {cells.map((cell) => (
               <div key={cell.id} className={styles.el}>
-                {/* imageContainer equivalent */}
                 <div
                   className={`${styles.imageContainer} ${
                     cell.bgClass
                   } overflow-hidden ${cell.imageStyle || ""}`}
                 >
-                  {cell.isHero ? (
-                    <HeroContent contentScale={contentScale} />
-                  ) : (
-                    <div className="relative h-full w-full">
-                      <div className={`absolute inset-0 ${cell.imageStyle}`} />
-                    </div>
-                  )}
+                  {/* Only show image for all cells, not hero content */}
+                  <div className="relative h-full w-full">
+                    <div className={`absolute inset-0 ${cell.imageStyle}`} />
+                    {cell.id === "cell1" && (
+                      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-green-100 border-gray-700 opacity-60" />
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
+          </motion.div>
+          {/* Absolutely centered, inversely-scaled hero content */}
+          <motion.div
+            className={styles.heroContentOverlay}
+            style={{
+              scale: contentScale,
+              willChange: "transform",
+            }}
+          >
+            <HeroContent />
           </motion.div>
         </div>
       </div>

@@ -1,18 +1,13 @@
 import React from "react";
 import styles from "./HeroContent.module.css";
-import { motion, MotionValue } from "framer-motion";
 import Button from "./Button";
 
-interface HeroContentProps {
-  contentScale: MotionValue<number>;
-}
-
-const HeroContent: React.FC<HeroContentProps> = ({ contentScale }) => (
+const HeroContent: React.FC = () => (
   <div className={styles.heroContentWrapper}>
     {/* Blurred Gradient Overlay */}
     <div className={styles.heroOverlay} />
     {/* Content */}
-    <motion.div className={styles.heroContent} style={{ scale: contentScale }}>
+    <div className={styles.heroContent}>
       {/* Info Box with Checkmark */}
       <div className={styles.infoBox}>
         <span className={styles.checkCircle}>
@@ -50,7 +45,7 @@ const HeroContent: React.FC<HeroContentProps> = ({ contentScale }) => (
       <Button className={styles.heroButton}>SCHEDULE A CALL</Button>
       {/* Guarantee Text */}
       <div className={styles.guaranteeText}>2-Year Satisfaction Guarantee</div>
-    </motion.div>
+    </div>
   </div>
 );
 
