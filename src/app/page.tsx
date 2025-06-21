@@ -10,6 +10,7 @@ import HexagonSections from "@/components/HexagonSections";
 import Footer from "@/components/Footer";
 import CtaSection from "@/components/CtaSection";
 import ResultsSection from "@/components/ResultsSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
 
 export default function Home() {
   useEffect(() => {
@@ -30,6 +31,7 @@ export default function Home() {
       <LearnMoreCards />
       <ReviewsSection />
       <HexagonSections />
+      <HowItWorksSection />
       <ResultsSection />
       <CtaSection />
       <Footer />
