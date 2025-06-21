@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import ReviewsSection from "@/components/ReviewsSection";
 import HexagonSections from "@/components/HexagonSections";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function Home() {
       <LearnMoreCards />
       <ReviewsSection />
       <HexagonSections />
+      <Footer />
     </main>
   );
 }
