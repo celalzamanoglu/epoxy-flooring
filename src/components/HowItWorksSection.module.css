@@ -113,4 +113,41 @@
 .guaranteeText {
   font-size: 0.9rem;
   color: #a3a3a3;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 80px 20px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 60px;
+  }
+
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 20px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .iconWrapper {
+    width: 100px;
+    height: 115px;
+    font-size: 2rem;
+  }
+
+  .stepTitle {
+    font-size: 1.1rem;
+  }
 } 
