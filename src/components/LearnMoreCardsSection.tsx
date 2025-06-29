@@ -22,16 +22,14 @@ const LearnMoreCards: React.FC = () => {
     <section className={styles.section}>
       <div className={styles.cardsContainer}>
         {cards.map((card) => (
-          <div
-            className={styles.card}
-            key={card.big}
-            style={{ backgroundImage: `url(${card.bg})` }}
-          >
-            <div className={styles.overlay} />
-            <div className={styles.content}>
-              <span className={styles.small}>{card.small}</span>
-              <span className={styles.big}>{card.big}</span>
-              <Button className={styles.cardButton}>{card.button}</Button>
+          <div className={styles.glowWrapper} key={card.big}>
+            <div className={styles.card} style={{ backgroundImage: `url(${card.bg})` }}>
+              <div className={styles.overlay} />
+              <div className={styles.content}>
+                <span className={styles.small}>{card.small}</span>
+                <span className={styles.big}>{card.big}</span>
+                <Button className={styles.cardButton}>{card.button}</Button>
+              </div>
             </div>
           </div>
         ))}
