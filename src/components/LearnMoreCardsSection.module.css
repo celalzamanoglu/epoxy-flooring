@@ -27,17 +27,15 @@
   justify-content: center;
   background-size: cover;
   background-position: center;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 
-    0 20px 60px rgba(0,0,0,0.3),
-    0 0 40px rgba(177, 108, 234, 0.3),
-    0 0 80px rgba(110, 168, 250, 0.2);
+.backgroundImage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
 .overlay {
@@ -74,22 +72,58 @@
   font-weight: 700;
   margin-bottom: 2.2rem;
   line-height: 1.2;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
-/* Remove the button styles as they're now in Button.module.css */
-/* Add cardButton class for any card-specific button styling */
-.cardButton {
-  /* Any card-specific button styling can go here */
+.glowWrapper {
+  position: relative;
+  width: 650px;
+  height: 750px;
+  border-radius: 24px;
+  transition: all 0.3s ease;
 }
 
-/* Remove the arrowCircle styles as they're now in Button.module.css */
+.glowWrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(1);
+  box-shadow: 0 0 20px rgba(177, 108, 234, 0.3), 0 0 40px rgba(110, 168, 250, 0.2), 0 0 80px rgba(110, 168, 250, 0.1);
+}
+
+.glowWrapper:hover::before {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.glowWrapper:hover .card {
+  transform: scale(1.03);
+}
+
+@media (max-width: 1000px) {
+  .glowWrapper {
+    width: 100%;
+    max-width: 650px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .glowWrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 
 @media (max-width: 1000px) {
   .section {
     padding: 80px 30px;
   }
-  
   .cardsContainer {
     flex-direction: column;
     gap: 4rem;
@@ -105,9 +139,8 @@
   .section {
     padding: 60px 20px;
   }
-  
   .card {
     width: 100%;
     max-width: 100%;
   }
-} 
+}

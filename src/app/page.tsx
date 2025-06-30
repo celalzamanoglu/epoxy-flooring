@@ -4,7 +4,7 @@ import { HeroSection } from "@/components/HeroSection";
 import NumbersSection from "@/components/NumbersSection";
 import LearnMoreCards from "@/components/LearnMoreCardsSection";
 import { useEffect } from "react";
-import Lenis from "@studio-freight/lenis";
+import Lenis from "lenis";
 import ReviewsSection from "@/components/ReviewsSection";
 import HexagonSections from "@/components/HexagonSections";
 import Footer from "@/components/Footer";
