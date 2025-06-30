@@ -9,6 +9,7 @@
 
 .cardsContainer {
   display: flex;
+  flex-wrap: wrap;
   gap: 6rem;
   justify-content: center;
   align-items: center;
@@ -106,32 +107,38 @@
 }
 
 @media (max-width: 1000px) {
-  .glowWrapper {
-    width: 100%;
-    max-width: 650px;
-    height: 500px;
-  }
-}
-
-@media (max-width: 600px) {
-  .glowWrapper {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 1000px) {
   .section {
     padding: 80px 30px;
   }
   .cardsContainer {
     flex-direction: column;
+    flex-wrap: nowrap;
     gap: 4rem;
   }
+  .glowWrapper,
   .card {
     width: 100%;
     max-width: 650px;
     height: 500px;
+  }
+}
+
+@media (max-width: 1800px) and (min-width: 1001px) {
+  .cardsContainer {
+    gap: 3rem;
+  }
+  .glowWrapper,
+  .card {
+    width: 500px;
+    height: 600px;
+  }
+}
+
+@media (max-width: 600px) {
+  .glowWrapper,
+  .card {
+    width: 100%;
+    max-width: 100%;
   }
 }
 

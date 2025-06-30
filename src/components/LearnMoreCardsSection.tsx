@@ -5,14 +5,27 @@ import Button from "./Button";
 const cards = [
   {
     bg: "/1.jpeg",
-    small: "Transform Your Space with Durable, Stunning Surfaces",
-    big: "PREMIUM EPOXY FLOOR INSTALLATION",
+    small: "Perfect for Garages • Restaurants • Homes • Showrooms • Warehouses • Countertops & More",
+    big: `METALLIC EPOXY FLOORING - ART MEETS DURABILITY`,
     button: "LEARN MORE",
   },
   {
     bg: "/3.jpg",
-    small: "Custom Designs, Metallic Finishes, and Flake Systems",
-    big: "DECORATIVE & INDUSTRIAL FLOORING SOLUTIONS",
+    small: "Perfect for Garages • Patios • Pool Decs • Drive Ways • Basements & More",
+    big: "FLAKE EPOXY FLOORING - A UNIQUE FINISH FOR EVERY SPACE",
+    button: "LEARN MORE",
+  },
+  {
+    bg: "/2.jpg",
+    small: "Perfect For Commercial • Industrial • Residential Spaces",
+    big: "CONCRETE POLISHING",
+    button: "LEARN MORE",
+  },
+  {
+    bg: "/4.jpg",
+    small:
+      "Upgrade your garage with custom cabinets, car lifts, wall storage, and overhead racks designed for maximum space and style.",
+    big: "GARAGE DESIGN",
     button: "LEARN MORE",
   },
 ];
