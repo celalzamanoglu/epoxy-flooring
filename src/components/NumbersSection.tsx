@@ -3,8 +3,8 @@ import styles from "./NumbersSection.module.css";
 
 const counters = [
   { end: 400, suffix: "+", label: "Floors Perfected" },
-  { end: 3000, suffix: "+", label: "Happy Clients" },
-  { end: 100000, suffix: "+", label: "Different Designs" },
+  { end: 300, suffix: "+", label: "Happy Clients" },
+  { end: 300000, suffix: "+", label: "SF Floors Installed" },
 ];
 
 function formatNumber(num: number) {
