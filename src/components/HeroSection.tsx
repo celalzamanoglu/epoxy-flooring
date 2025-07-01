@@ -57,19 +57,19 @@ export function HeroSection() {
     : isSmallScreen
     ? 0.8
     : isXSmallScreen
-    ? 0.8
+    ? 0.64
     : 0.5;
 
   const contentEndScale = isXLargeScreen
     ? 0.6
     : isLargeScreen
-    ? 0.35
+    ? 0.31
     : isMediumScreen
-    ? 0.3
+    ? 0.26
     : isSmallScreen
     ? 0.55
     : isXSmallScreen
-    ? 0.55
+    ? 0.5
     : 0.5;
 
   // Inverse scale for the content to maintain proportional size

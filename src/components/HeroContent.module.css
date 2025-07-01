@@ -74,11 +74,12 @@
 .heroTitle {
   font-size: 2rem;
   font-weight: 800;
-  width: 200%;
   color: #fff;
   margin-bottom: 1.5rem;
   line-height: 1.1;
   letter-spacing: 0.01em;
+  white-space: nowrap;
+
 }
 
 .heroSubtitle {
@@ -135,15 +136,13 @@
   .infoBox {
     padding: 0.5rem 1.4rem;
   }
-  
+  .infoText {
+    font-size: 0.8rem;
+  }
   .checkCircle {
     width: 24px;
     height: 24px;
     margin-right: 0.65rem;
-  }
-  
-  .infoText {
-    font-size: 0.8rem;
   }
 }
 
@@ -151,26 +150,20 @@
   .infoBox {
     padding: 0.5rem 1.5rem;
   }
-  
+  .infoText {
+    font-size: 0.72rem;
+  }
   .checkCircle {
     width: 28px;
     height: 28px;
     margin-right: 0.7rem;
   }
-  
-  .infoText {
-    font-size: 0.72rem;
-    white-space: normal;
-  }
-  
   .heroTitle {
     font-size: 2.5rem;
   }
-  
   .heroSubtitle {
     font-size: 1rem;
   }
-  
   .guaranteeText {
     font-size: 0.875rem;
   }
@@ -197,10 +190,13 @@
 }
 
 @media (min-width: 1280px) {
+  .infoText {
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+  }
   .heroTitle {
     font-size: 4rem;
   }
-  
   .heroSubtitle {
     font-size: 1.15rem;
   }
