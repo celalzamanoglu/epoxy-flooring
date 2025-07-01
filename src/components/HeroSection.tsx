@@ -61,7 +61,7 @@ export function HeroSection() {
     : 0.5;
 
   const contentEndScale = isXLargeScreen
-    ? 0.6
+    ? 0.4
     : isLargeScreen
     ? 0.31
     : isMediumScreen
