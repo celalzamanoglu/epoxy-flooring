@@ -40,7 +40,7 @@ const NumbersSection: React.FC = () => {
     if (!hasAnimated) return;
     let start = [0, 0, 0];
     const ends = counters.map((c) => c.end);
-    const duration = 4000; // ms
+    const duration = 1500; // ms
     const steps = 400;
     const increments = ends.map((end) => Math.ceil(end / steps));
     let currentStep = 0;
