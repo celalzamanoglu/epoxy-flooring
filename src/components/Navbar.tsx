@@ -36,9 +36,9 @@ const Navbar: React.FC = () => {
         {/* Logo & Brand */}
         <Link href="/" className={styles.brandLink}>
           {/* Brand logo image */}
-          {/* <div className={styles.logoContainer}>
-            <img src="/brand-logo.jpg" alt="Milkyway Epoxy Logo" width="48" height="48" className={styles.logoImage} />
-          </div> */}
+          <div className={styles.logoContainer}>
+            <img src="/brand-logo.png" alt="Milkyway Epoxy Logo" width="48" height="48" className={styles.logoImage} />
+          </div>
           <div className={styles.brandContainer}>
             <span className={styles.brandName}>Milkyway Epoxy</span>
           </div>
