@@ -6,20 +6,21 @@
   gap: 0.7rem;
   background: linear-gradient(90deg, #b16cea 0%, #6ea8fa 100%);
   color: #fff;
-  font-size: 1.13rem;
   font-weight: 700;
   border: none;
   border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.13);
+  transition: background 0.2s, box-shadow 0.2s;
+  /* Default to medium size */
+  font-size: 1.13rem;
   padding: 1.1rem 4.2rem 1.1rem 2.2rem;
   min-width: 260px;
-  cursor: pointer;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
-  transition: background 0.2s, box-shadow 0.2s;
 }
 
 .button:hover {
   background: linear-gradient(90deg, #6ea8fa 0%, #b16cea 100%);
-  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
 }
 
 .arrowCircle {
@@ -30,4 +31,89 @@
   display: flex;
   align-items: center;
   justify-content: center;
-} 
+}
+
+/* Size variants */
+.small {
+  font-size: 0.875rem;
+  padding: 0.6rem 2.8rem 0.6rem 1.4rem;
+  min-width: 180px;
+}
+
+.small .arrowCircle {
+  right: 1rem;
+}
+
+.small .arrowCircle svg {
+  width: 24px;
+  height: 24px;
+}
+
+.small .arrowCircle svg circle {
+  r: 12;
+  cx: 12;
+  cy: 12;
+}
+
+.medium {
+  font-size: 1rem;
+  padding: 0.9rem 3.5rem 0.9rem 1.8rem;
+  min-width: 220px;
+}
+
+.medium .arrowCircle {
+  right: 1.25rem;
+}
+
+.medium .arrowCircle svg {
+  width: 28px;
+  height: 28px;
+}
+
+.medium .arrowCircle svg circle {
+  r: 14;
+  cx: 14;
+  cy: 14;
+}
+
+.large {
+  font-size: 1.13rem;
+  padding: 1.1rem 4.2rem 1.1rem 2.2rem;
+  min-width: 260px;
+}
+
+.large .arrowCircle {
+  right: 1.5rem;
+}
+
+.large .arrowCircle svg {
+  width: 32px;
+  height: 32px;
+}
+
+.large .arrowCircle svg circle {
+  r: 16;
+  cx: 16;
+  cy: 16;
+}
+
+.xlarge {
+  font-size: 1.25rem;
+  padding: 1.3rem 5rem 1.3rem 2.6rem;
+  min-width: 300px;
+}
+
+.xlarge .arrowCircle {
+  right: 1.75rem;
+}
+
+.xlarge .arrowCircle svg {
+  width: 36px;
+  height: 36px;
+}
+
+.xlarge .arrowCircle svg circle {
+  r: 18;
+  cx: 18;
+  cy: 18;
+}
