@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,8 +18,7 @@ export const metadata: Metadata = {
   creator: "Milkyway Epoxy Flooring",
   openGraph: {
     title: "Milkyway Epoxy Flooring | Premium Epoxy Floor Solutions",
-    description:
-      "Professional epoxy flooring solutions for residential, commercial, and industrial spaces in Arizona.",
+    description: "Professional epoxy flooring solutions for residential, commercial, and industrial spaces in Arizona.",
     url: "https://milkywayepoxy.com",
     siteName: "Milkyway Epoxy Flooring",
     images: [
@@ -35,8 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Milkyway Epoxy | Premium Epoxy Floor Solutions",
-    description:
-      "Professional epoxy flooring solutions for residential, commercial, and industrial spaces in Arizona.",
+    description: "Professional epoxy flooring solutions for residential, commercial, and industrial spaces in Arizona.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -60,12 +59,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
+        <Navbar />
         {children}
       </body>
     </html>

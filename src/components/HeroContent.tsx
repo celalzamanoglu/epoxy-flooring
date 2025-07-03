@@ -11,40 +11,27 @@ const HeroContent: React.FC = () => (
       {/* Info Box with Checkmark */}
       <div className={styles.infoBox}>
         <span className={styles.checkCircle}>
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="10" cy="10" r="10" fill="#2ee9c7" />
-            <path
-              d="M6 10.5l2 2 4-4"
-              stroke="#fff"
-              strokeWidth="1.7"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+            <path d="M6 10.5l2 2 4-4" stroke="#fff" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
         <span className={styles.infoText}>
-          Full-Service Epoxy Flooring For A Flat Monthly Rate
+          Flake, Metallic & Polished Concrete in 📍 South Florida — We Travel for Metallic & Large-Scale Projects
+          Nationwide
         </span>
       </div>
       {/* Big Headline */}
-      <h1 className={styles.heroTitle}>
-        SEAMLESS EPOXY FLOORING <br /> & UNSTOPPABLE GROWTH
-      </h1>
+      <h1 className={styles.heroTitle}>TRANSFORM YOUR FLOORS INTO ART</h1>
       {/* Subtitle */}
       <p className={styles.heroSubtitle}>
-        Ditch the flooring headaches and drama. Get fast, beautiful, durable
-        floors with our plug-and-play team.
+        Premium metallic, flake, and polished epoxy flooring for residential, commercial, and industrial spaces.
+        Durable. Stunning. One-of-a-kind.
       </p>
       {/* CTA Button */}
       <Button className={styles.heroButton}>SCHEDULE A CALL</Button>
       {/* Guarantee Text */}
-      <div className={styles.guaranteeText}>2-Year Satisfaction Guarantee</div>
+      <div className={styles.guaranteeText}>Limited Life Time Warranty For Flake Floors</div>
     </div>
   </div>
 );
