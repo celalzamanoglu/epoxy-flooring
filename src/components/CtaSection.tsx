@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./CtaSection.module.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Button from "./Button";
 
 const CtaSection = () => {
   const images = [
@@ -46,25 +47,16 @@ const CtaSection = () => {
         <div className={styles.imageGrid}>
           {images.map((src, index) => (
             <div key={index} className={styles.gridItem}>
-              <Image
-                src={src}
-                alt={`background image ${index + 1}`}
-                width={200}
-                height={150}
-              />
+              <Image src={src} alt={`background image ${index + 1}`} width={200} height={150} />
             </div>
           ))}
         </div>
         <div className={styles.content}>
           <h2>READY TO TRANSFORM YOUR SPACE?</h2>
-          <p>
-            Get a durable, stunning epoxy floor. Let&apos;s create your unique
-            design.
-          </p>
-          <button className={styles.ctaButton}>
-            GET A FREE QUOTE
-            <span className={styles.arrowIcon}>&rarr;</span>
-          </button>
+          <p>Get a durable, stunning epoxy floor. Let&apos;s create your unique design.</p>
+          <div className={styles.buttonContainer}>
+            <Button size="large">GET A FREE QUOTE</Button>
+          </div>
         </div>
       </motion.div>
     </section>
