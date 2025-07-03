@@ -1,0 +1,266 @@
+.navbar {
+  width: 100%;
+  background-color: #1c1c1c;
+  border-bottom: 1px solid #374151;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  z-index: 50;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+.brandLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brandLink:hover .brandName {
+  color: white;
+}
+
+.logoContainer {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0.375rem;
+}
+
+.brandContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandName {
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  transition: color 0.2s;
+}
+
+.desktopLinks {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .desktopLinks {
+    display: flex;
+  }
+}
+
+.navLink {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: #6ea8fa;
+}
+
+.servicesDropdown {
+  position: relative;
+}
+
+.servicesButton {
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  transition: color 0.2s;
+}
+
+.servicesButton:hover {
+  color: #6ea8fa;
+}
+
+.dropdownMenu {
+  position: absolute;
+  left: -0.5rem;
+  top: 100%;
+  width: 14rem;
+  background-color: #232323;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem;
+  z-index: 50;
+}
+
+.servicesDropdown:hover .dropdownMenu {
+  display: block;
+}
+
+.dropdownLink {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  border-radius: 0.375rem;
+  margin-bottom: 0.25rem;
+}
+
+.dropdownLink:last-child {
+  margin-bottom: 0;
+}
+
+.dropdownLink:hover {
+  background-color: #2d2d2d;
+}
+
+.ctaButton {
+  margin-left: 1rem;
+}
+
+.mobileMenu {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .mobileMenu {
+    display: none;
+  }
+}
+
+.hamburgerButton {
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburgerButton:focus {
+  outline: none;
+}
+
+.mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.mobilePanel {
+  width: 75%;
+  max-width: 20rem;
+  background-color: #232323;
+  height: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.closeButton {
+  align-self: flex-end;
+  margin-bottom: 1rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.closeButton:focus {
+  outline: none;
+}
+
+.mobileLink {
+  color: white;
+  font-weight: bold;
+  font-size: 1.125rem;
+  text-decoration: none;
+}
+
+.mobileServicesButton {
+  color: white;
+  font-weight: bold;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+
+.mobileDropdown {
+  margin-top: 0.5rem;
+  background-color: #2d2d2d;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem;
+}
+
+.mobileDropdownLink {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  border-radius: 0.375rem;
+  margin-bottom: 0.25rem;
+}
+
+.mobileDropdownLink:last-child {
+  margin-bottom: 0;
+}
+
+.mobileDropdownLink:hover {
+  background-color: #333;
+}
+
+.mobileCtaContainer {
+  margin-top: 1rem;
+}

@@ -3,8 +3,8 @@ import styles from "./NumbersSection.module.css";
 
 const counters = [
   { end: 400, suffix: "+", label: "Floors Perfected" },
-  { end: 3000, suffix: "+", label: "Happy Clients" },
-  { end: 100000, suffix: "+", label: "Different Designs" },
+  { end: 300, suffix: "+", label: "Happy Clients" },
+  { end: 300000, suffix: "+", label: "SF Floors Installed" },
 ];
 
 function formatNumber(num: number) {
@@ -40,7 +40,7 @@ const NumbersSection: React.FC = () => {
     if (!hasAnimated) return;
     let start = [0, 0, 0];
     const ends = counters.map((c) => c.end);
-    const duration = 4000; // ms
+    const duration = 1500; // ms
     const steps = 400;
     const increments = ends.map((end) => Math.ceil(end / steps));
     let currentStep = 0;

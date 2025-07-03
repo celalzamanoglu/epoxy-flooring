@@ -1,5 +1,5 @@
 .section {
-  overflow-x: hidden;
+  overflow: hidden;
   width: 100%;
   min-height: 600px;
   display: flex;
