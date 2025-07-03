@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./HexagonSection.module.css";
 import { motion, useInView } from "framer-motion";
 import Button from "./Button";
+import Link from "next/link";
 
 export interface HexagonSectionProps {
   hexagonPosition?: "left" | "right";
@@ -32,21 +33,9 @@ const defaultFeatures = [
 
 const CheckIcon = () => (
   <span className={styles.checkIcon}>
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 28 28"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="14" cy="14" r="14" fill="#2ee9c7" />
-      <path
-        d="M9 14.5l3 3 6-6"
-        stroke="#fff"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M9 14.5l3 3 6-6" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   </span>
 );
@@ -57,7 +46,7 @@ const HexagonSection: React.FC<HexagonSectionProps> = ({
   ctaBig = "TRANSFORM YOUR FLOORS\nWITH MILKYWAY EPOXY",
   features = defaultFeatures,
   ctaDesc = "Get a stunning, long-lasting floor with our expert epoxy installation. Fast, clean, and fully customized for your home or business. Discover the Milkyway difference today!",
-  buttonText = "SCHEDULE A FREE QUOTE",
+  buttonText = "CONTACT US",
 }) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, {
@@ -122,7 +111,9 @@ const HexagonSection: React.FC<HexagonSectionProps> = ({
       >
         {ctaDesc}
       </motion.p>
-      <Button>{buttonText}</Button>
+      <Link href="/contact">
+        <Button>{buttonText}</Button>
+      </Link>
     </div>
   );
 

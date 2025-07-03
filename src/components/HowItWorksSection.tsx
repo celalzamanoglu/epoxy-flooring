@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./HowItWorksSection.module.css";
 import { FaPalette, FaHardHat, FaCheckCircle } from "react-icons/fa";
 import Button from "./Button";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const steps = [
@@ -36,9 +37,7 @@ const HowItWorksSection = () => {
     >
       <div className={styles.container}>
         <p className={styles.preTitle}>How It Works</p>
-        <h2 className={styles.title}>
-          A SIMPLE PROCESS FOR A STUNNING, DURABLE FLOOR.
-        </h2>
+        <h2 className={styles.title}>A SIMPLE PROCESS FOR A STUNNING, DURABLE FLOOR.</h2>
         <div className={styles.stepsGrid}>
           {steps.map((step, index) => (
             <div key={index} className={styles.step}>
@@ -49,7 +48,9 @@ const HowItWorksSection = () => {
           ))}
         </div>
         <div className={styles.buttonWrapper}>
-          <Button>SCHEDULE A CALL</Button>
+          <Link href="/contact">
+            <Button>CONTACT US</Button>
+          </Link>
         </div>
         <p className={styles.guaranteeText}>Satisfaction Guaranteed</p>
       </div>
