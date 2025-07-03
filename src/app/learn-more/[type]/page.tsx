@@ -3,13 +3,13 @@ import LearnMorePage from "@/components/LearnMorePage";
 import { learnMoreMetadataMap } from "@/lib/learnMoreMetadata";
 
 interface LearnMorePageProps {
-  params: {
+  params: Promise<{
     type: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: LearnMorePageProps): Promise<Metadata> {
-  const { type } = params;
+  const { type } = await params;
   const meta = learnMoreMetadataMap[type] ?? {
     title: "Learn More | Milkyway Epoxy",
     description: "Explore our flooring and garage solutions.",
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: LearnMorePageProps): Promise<
 }
 
 const LearnMorePageWrapper: React.FC<LearnMorePageProps> = async ({ params }) => {
-  const { type } = params;
+  const { type } = await params;
   return <LearnMorePage type={type} />;
 };
 
