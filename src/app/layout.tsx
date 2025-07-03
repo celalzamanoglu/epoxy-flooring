@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { milkywaySchemaOrg } from "@/lib/schemaOrg";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NODE_ENV === "production" ? "https://milkywayepoxy.com" : "http://localhost:3000"),
   title: "Milkyway Epoxy | Nationwide Epoxy Flooring & Garage Solutions",
   icons: {
     icon: "/favicon.ico",
@@ -65,6 +67,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(milkywaySchemaOrg) }} />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <Navbar />
