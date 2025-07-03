@@ -1,0 +1,147 @@
+.main {
+  background-color: #1c1c1c;
+  min-height: 100vh;
+}
+
+.contactSection {
+  padding: 80px 20px;
+  background-color: #1c1c1c;
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.8;
+  color: #e0e0e0;
+  font-weight: 400;
+  margin: 0;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 2rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+  min-width: 2rem;
+  text-align: center;
+}
+
+.text {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  font-weight: 400;
+}
+
+.link {
+  font-size: 1.1rem;
+  color: #6ea8fa;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #b16cea;
+  text-decoration: underline;
+}
+
+.tagline {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #b3f0e6;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 60px 20px;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contactInfo {
+    padding-left: 0;
+  }
+
+  .title {
+    margin-bottom: 1.5rem;
+  }
+
+  .tagline {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactSection {
+    padding: 40px 15px;
+  }
+
+  .contentGrid {
+    gap: 2rem;
+  }
+
+  .contactItem {
+    gap: 0.8rem;
+  }
+
+  .icon {
+    font-size: 1.3rem;
+    min-width: 1.8rem;
+  }
+
+  .text,
+  .link {
+    font-size: 1rem;
+  }
+}

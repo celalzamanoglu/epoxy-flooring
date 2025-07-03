@@ -1,16 +1,16 @@
 "use client";
 
+import { useEffect } from "react";
+import Lenis from "lenis";
 import { HeroSection } from "@/components/HeroSection";
 import NumbersSection from "@/components/NumbersSection";
 import LearnMoreCards from "@/components/LearnMoreCardsSection";
-import { useEffect } from "react";
-import Lenis from "lenis";
 import ReviewsSection from "@/components/ReviewsSection";
 import HexagonSections from "@/components/HexagonSections";
-import Footer from "@/components/Footer";
-import CtaSection from "@/components/CtaSection";
-import ResultsSection from "@/components/ResultsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import ResultsSection from "@/components/ResultsSection";
+import CtaSection from "@/components/CtaSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   useEffect(() => {
@@ -22,8 +22,11 @@ export default function Home() {
     }
 
     requestAnimationFrame(raf);
-  }, []);
 
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
   return (
     <main className="mt-[50vh] mb-[100vh] bg-[#1C1C1C]">
       <HeroSection />
