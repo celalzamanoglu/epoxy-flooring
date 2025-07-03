@@ -3,6 +3,7 @@ import styles from "./CtaSection.module.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Button from "./Button";
+import Link from "next/link";
 
 const CtaSection = () => {
   const images = [
@@ -55,7 +56,9 @@ const CtaSection = () => {
           <h2>READY TO TRANSFORM YOUR SPACE?</h2>
           <p>Get a durable, stunning epoxy floor. Let&apos;s create your unique design.</p>
           <div className={styles.buttonContainer}>
-            <Button size="large">GET A FREE QUOTE</Button>
+            <Link href="/contact">
+              <Button size="large">CONTACT US</Button>
+            </Link>
           </div>
         </div>
       </motion.div>
