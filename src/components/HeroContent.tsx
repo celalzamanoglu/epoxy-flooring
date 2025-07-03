@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./HeroContent.module.css";
 import Button from "./Button";
+import Link from "next/link";
 
 const HeroContent: React.FC = () => (
   <div className={styles.heroContentWrapper}>
@@ -29,7 +30,9 @@ const HeroContent: React.FC = () => (
         Durable. Stunning. One-of-a-kind.
       </p>
       {/* CTA Button */}
-      <Button className={styles.heroButton}>SCHEDULE A CALL</Button>
+      <Link href="/contact">
+        <Button className={styles.heroButton}>CONTACT US</Button>
+      </Link>
       {/* Guarantee Text */}
       <div className={styles.guaranteeText}>Limited Life Time Warranty For Flake Floors</div>
     </div>

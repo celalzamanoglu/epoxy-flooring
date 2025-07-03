@@ -3,6 +3,7 @@
 import React from "react";
 import styles from "./LearnMorePage.module.css";
 import Button from "./Button";
+import Link from "next/link";
 import HexagonSection from "./HexagonSection";
 import HowItWorksSection from "./HowItWorksSection";
 import ResultsSection from "./ResultsSection";
@@ -137,10 +138,7 @@ const serviceData: Record<string, ServiceData> = {
   },
 };
 
-const LearnMorePage: React.FC<LearnMorePageProps> = ({
-  type,
-  showHowItWorks = true,
-}) => {
+const LearnMorePage: React.FC<LearnMorePageProps> = ({ type, showHowItWorks = true }) => {
   const data = serviceData[type] || serviceData["metallic-epoxy"];
 
   return (
@@ -167,7 +165,9 @@ const LearnMorePage: React.FC<LearnMorePageProps> = ({
             />
           </div>
           <div className={styles.buttonWrapper}>
-            <Button>SCHEDULE A CALL</Button>
+            <Link href="/contact">
+              <Button>CONTACT US</Button>
+            </Link>
           </div>
         </div>
       </section>

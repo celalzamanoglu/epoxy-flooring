@@ -68,9 +68,11 @@ const Navbar: React.FC = () => {
           <Link href="/about" className={styles.navLink}>
             ABOUT US
           </Link>
-          <Button size="small" className={styles.ctaButton}>
-            SCHEDULE A CALL
-          </Button>
+          <Link href="/contact">
+            <Button size="small" className={styles.ctaButton}>
+              CONTACT US
+            </Button>
+          </Link>
         </div>
         {/* Hamburger for mobile */}
         <div className={styles.mobileMenu}>
@@ -126,7 +128,9 @@ const Navbar: React.FC = () => {
                   ABOUT US
                 </Link>
                 <div className={styles.mobileCtaContainer}>
-                  <Button size="small">SCHEDULE A CALL</Button>
+                  <Link href="/contact">
+                    <Button size="small">CONTACT US</Button>
+                  </Link>
                 </div>
               </div>
             </div>
