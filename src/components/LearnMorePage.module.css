@@ -6,7 +6,7 @@
 
 /* Hero Section */
 .heroSection {
-  padding: 120px 0 20px;
+  padding: 80px 0 20px;
   text-align: center;
 }
 
@@ -72,7 +72,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .heroSection {
-    padding: 80px 0 60px;
+    padding: 60px 0 40px;
   }
 
   .videoSection {
@@ -98,11 +98,11 @@
   }
 
   .heroSection {
-    padding: 60px 0 40px;
+    padding: 40px 0 30px;
   }
 
   .videoSection {
-    padding: 40px 0;
+    padding: 30px 0;
   }
 
   .video {
