@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 
 const Footer = () => {
@@ -26,11 +26,14 @@ const Footer = () => {
         </div>
         <div className={styles.bottomSection}>
           <div className={styles.socialIcons}>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://instagram.com/milkywayepoxyllc/" target="_blank" rel="noopener noreferrer">
               <FaInstagram />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin />
+            <a href="https://youtube.com/@milkywayepoxy" target="_blank" rel="noopener noreferrer">
+              <FaYoutube />
+            </a>
+            <a href="https://wa.link/milkywayepoxy" target="_blank" rel="noopener noreferrer">
+              <FaWhatsapp />
             </a>
           </div>
           <p>© 2024 — Copyright Milkway Epoxy</p>
