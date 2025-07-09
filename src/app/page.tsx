@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Lenis from "lenis";
+
 import { HeroSection } from "@/components/HeroSection";
 import NumbersSection from "@/components/NumbersSection";
 import LearnMoreCards from "@/components/LearnMoreCardsSection";
@@ -9,6 +10,7 @@ import ReviewsSection from "@/components/ReviewsSection";
 import HexagonSections from "@/components/HexagonSections";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import ResultsSection from "@/components/ResultsSection";
+import BeforeAfterSection from "@/components/BeforeAfterSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 
@@ -33,8 +35,21 @@ export default function Home() {
       <NumbersSection />
       <LearnMoreCards />
       <ReviewsSection />
+      <BeforeAfterSection
+        imageBefore="/1.jpeg"
+        imageAfter="/2.jpg"
+        beforeAlt="Before epoxy flooring"
+        afterAlt="After epoxy flooring"
+      />
       <HexagonSections />
+      <BeforeAfterSection
+        imageBefore="/1.jpeg"
+        imageAfter="/2.jpg"
+        beforeAlt="Before epoxy flooring"
+        afterAlt="After epoxy flooring"
+      />
       <HowItWorksSection />
+
       <ResultsSection />
       <CtaSection />
       <Footer />
