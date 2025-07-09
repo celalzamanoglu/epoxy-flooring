@@ -5,19 +5,11 @@ import { ImageComparisonSlider } from "./ImageComparisonSlider";
 interface BeforeAfterSectionProps {
   title?: string;
   subtitle?: string;
-  imageBefore: string;
-  imageAfter: string;
-  beforeAlt?: string;
-  afterAlt?: string;
 }
 
 const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
   title = "BEFORE & AFTER",
   subtitle = "See the transformation with our expert epoxy flooring installations",
-  imageBefore,
-  imageAfter,
-  beforeAlt,
-  afterAlt,
 }) => {
   return (
     <section className={styles.section}>
@@ -27,10 +19,18 @@ const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
           {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
           <div className={styles.sliderWrapper}>
             <ImageComparisonSlider
-              imageBefore={imageBefore}
-              imageAfter={imageAfter}
-              beforeAlt={beforeAlt}
-              afterAlt={afterAlt}
+              imageBefore="/1.jpeg"
+              imageAfter="/2.jpg"
+              beforeAlt="Before image"
+              afterAlt="After image"
+            />
+          </div>
+          <div className={styles.sliderWrapper}>
+            <ImageComparisonSlider
+              imageBefore="/3.jpg"
+              imageAfter="/4.jpg"
+              beforeAlt="Before image"
+              afterAlt="After image"
             />
           </div>
         </div>

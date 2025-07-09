@@ -35,21 +35,9 @@ export default function Home() {
       <NumbersSection />
       <LearnMoreCards />
       <ReviewsSection />
-      <BeforeAfterSection
-        imageBefore="/1.jpeg"
-        imageAfter="/2.jpg"
-        beforeAlt="Before epoxy flooring"
-        afterAlt="After epoxy flooring"
-      />
+      <BeforeAfterSection />
       <HexagonSections />
-      <BeforeAfterSection
-        imageBefore="/1.jpeg"
-        imageAfter="/2.jpg"
-        beforeAlt="Before epoxy flooring"
-        afterAlt="After epoxy flooring"
-      />
       <HowItWorksSection />
-
       <ResultsSection />
       <CtaSection />
       <Footer />
