@@ -2,6 +2,7 @@
 
 import React from "react";
 import styles from "./LearnMorePage.module.css";
+import VideoPlayer from "./VideoPlayer";
 import Button from "./Button";
 import Link from "next/link";
 import HexagonSection from "./HexagonSection";
@@ -152,23 +153,14 @@ const LearnMorePage: React.FC<LearnMorePageProps> = ({ type, showHowItWorks = tr
       </section>
 
       {/* Video Section */}
-      <section className={styles.videoSection}>
-        <div className={styles.container}>
-          <div className={styles.videoWrapper}>
-            <iframe
-              src={data.videoUrl}
-              title={`${data.title} Video`}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className={styles.video}
-            />
-          </div>
-          <div className={styles.buttonWrapper}>
-            <Link href="/contact">
-              <Button>CONTACT US</Button>
-            </Link>
-          </div>
+      <VideoPlayer videoUrl={data.videoUrl} title={`${data.title} Video`} compact={true} />
+
+      {/* CTA Button Section */}
+      <section className={styles.ctaButtonSection}>
+        <div className={styles.ctaButtonContainer}>
+          <Link href="/contact">
+            <Button>CONTACT US</Button>
+          </Link>
         </div>
       </section>
 
