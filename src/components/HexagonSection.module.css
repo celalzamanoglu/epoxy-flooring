@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   padding: 60px 0;
-  background: transparent;
+  background: radial-gradient(circle at 90% 50%, rgba(221, 26, 65, 0.328) 10%, transparent 40%), transparent;
   gap: 4vw;
 }
 
