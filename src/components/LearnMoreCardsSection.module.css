@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 80px 40px;
-  background: radial-gradient(circle at 5% 50%, rgba(4, 217, 210, 0.15) 8%, transparent 25%), transparent;
+  background: radial-gradient(circle at 0% 50%, rgba(4, 217, 210, 0.328) 10%, transparent 40%), transparent;
 }
 
 .cardsContainer {
