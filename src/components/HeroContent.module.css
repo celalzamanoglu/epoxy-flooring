@@ -44,12 +44,12 @@
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
   border-radius: 2rem;
   padding: 0.5rem 1rem;
   margin-bottom: 2rem;
   width: fit-content;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.13);
 }
 
 .checkCircle {
@@ -66,8 +66,9 @@
 
 .infoText {
   color: #fff;
-  font-size: 0.7rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   white-space: nowrap;
 }
 
@@ -79,7 +80,6 @@
   line-height: 1.1;
   letter-spacing: 0.01em;
   white-space: nowrap;
-
 }
 
 .heroSubtitle {
@@ -126,7 +126,7 @@
     height: 22px;
     margin-right: 0.6rem;
   }
-  
+
   .infoText {
     font-size: 0.75rem;
   }
@@ -137,7 +137,7 @@
     padding: 0.5rem 1.4rem;
   }
   .infoText {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
   .checkCircle {
     width: 24px;
@@ -151,7 +151,7 @@
     padding: 0.5rem 1.5rem;
   }
   .infoText {
-    font-size: 0.72rem;
+    font-size: 0.79rem;
   }
   .checkCircle {
     width: 28px;
@@ -173,7 +173,7 @@
   .heroTitle {
     font-size: 3rem;
   }
-  
+
   .heroSubtitle {
     font-size: 1.05rem;
   }
@@ -183,7 +183,7 @@
   .heroTitle {
     font-size: 3.5rem;
   }
-  
+
   .heroSubtitle {
     font-size: 1.1rem;
   }
@@ -191,7 +191,7 @@
 
 @media (min-width: 1280px) {
   .infoText {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     letter-spacing: 0.03em;
   }
   .heroTitle {
@@ -200,4 +200,4 @@
   .heroSubtitle {
     font-size: 1.15rem;
   }
-} 
+}

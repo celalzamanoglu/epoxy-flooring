@@ -18,8 +18,7 @@ const HeroContent: React.FC = () => (
           </svg>
         </span>
         <span className={styles.infoText}>
-          Flake, Metallic & Polished Concrete in 📍 South Florida — We Travel for Metallic & Large-Scale Projects
-          Nationwide
+          📍 South Florida — We Travel for Metallic & Large-Scale Projects Nationwide
         </span>
       </div>
       {/* Big Headline */}

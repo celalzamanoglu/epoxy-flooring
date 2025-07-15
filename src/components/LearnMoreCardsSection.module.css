@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 80px 40px;
-  background: transparent;
+  background: radial-gradient(circle at 0% 50%, rgba(4, 217, 210, 0.328) 10%, transparent 40%), transparent;
 }
 
 .cardsContainer {
@@ -65,15 +65,26 @@
   opacity: 0.85;
   margin-bottom: 1.2rem;
   font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 .big {
   font-size: 2.2rem;
   color: #fff;
   font-weight: 700;
-  margin-bottom: 2.2rem;
+  margin-bottom: 1.2rem;
   line-height: 1.2;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  letter-spacing: 1px;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  opacity: 0.85;
+  margin-bottom: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 .glowWrapper {
