@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./BeforeAfterSection.module.css";
 import { ImageComparisonSlider } from "./ImageComparisonSlider";
+import VideoPlayer from "./VideoPlayer";
 
 interface BeforeAfterSectionProps {
   title?: string;
@@ -17,6 +18,14 @@ const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
         <div className={styles.content}>
           <h2 className={styles.title}>{title}</h2>
           {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+          <VideoPlayer
+            videoUrl="/before_after_video.mov"
+            title="Milkway Epoxy - Before & After Video"
+            playInView={true}
+            loop={true}
+            videoType="youtubeShorts"
+            compact={true}
+          />
           <div className={styles.sliderWrapper}>
             <ImageComparisonSlider
               imageBefore="/before_1.jpg"
