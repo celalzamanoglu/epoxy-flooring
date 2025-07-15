@@ -33,7 +33,7 @@ const serviceData: Record<string, ServiceData> = {
     title: "PERFECT YOUR SPACE WITH OUR METALLIC EPOXY DESIGNS",
     description:
       "Transform your floors with our stunning metallic epoxy designs that combine artistic beauty with industrial strength. Our metallic epoxy creates a unique, shimmering effect that adds depth and elegance to any space. Perfect for restaurants, homes, showrooms, warehouses, countertops, and more. Experience the perfect blend of aesthetics and durability.",
-    videoUrl: "https://www.youtube.com/embed/your-metallic-epoxy-video",
+    videoUrl: "https://www.youtube.com/embed/wz7THPQuxhA",
     hexagonData: {
       ctaSmall: "Premium Metallic Epoxy",
       ctaBig: "ELEVATE YOUR SPACE\nWITH METALLIC EPOXY",
@@ -60,7 +60,7 @@ const serviceData: Record<string, ServiceData> = {
     title: "CREATE UNIQUE SPACES WITH FLAKE EPOXY FLOORING",
     description:
       "Add personality and character to your floors with our flake epoxy flooring solutions. Our decorative flakes come in various colors and sizes, allowing you to create custom designs that reflect your style. Ideal for garages, patios, pool decks, driveways, basements, and more. Get a durable, slip-resistant surface that looks amazing.",
-    videoUrl: "https://www.youtube.com/embed/your-flake-epoxy-video",
+    videoUrl: "https://www.youtube.com/embed/wz7THPQuxhA",
     hexagonData: {
       ctaSmall: "Decorative Flake Epoxy",
       ctaBig: "CUSTOMIZE YOUR FLOOR\nWITH FLAKE EPOXY",
@@ -87,7 +87,7 @@ const serviceData: Record<string, ServiceData> = {
     title: "REVEAL THE BEAUTY WITH CONCRETE POLISHING",
     description:
       "Unlock the hidden potential of your concrete floors with our professional concrete polishing services. We transform dull, worn concrete into stunning, high-gloss surfaces that rival the most expensive flooring materials. Perfect for commercial, industrial, and residential spaces. Experience the natural beauty of polished concrete.",
-    videoUrl: "https://www.youtube.com/embed/your-concrete-polishing-video",
+    videoUrl: "https://www.youtube.com/embed/wz7THPQuxhA",
     hexagonData: {
       ctaSmall: "Professional Concrete Polishing",
       ctaBig: "POLISH YOUR CONCRETE\nTO PERFECTION",
@@ -114,7 +114,7 @@ const serviceData: Record<string, ServiceData> = {
     title: "TRANSFORM YOUR GARAGE WITH PROFESSIONAL DESIGN",
     description:
       "Turn your garage into a functional, beautiful space with our comprehensive garage design services. From epoxy flooring to custom storage solutions, we create garages that work as hard as you do. Specializing in cabinets, car lifts, wall storage, and overhead racks. Make your garage the envy of the neighborhood.",
-    videoUrl: "https://www.youtube.com/embed/your-garage-design-video",
+    videoUrl: "https://www.youtube.com/embed/wz7THPQuxhA",
     hexagonData: {
       ctaSmall: "Complete Garage Solutions",
       ctaBig: "DESIGN YOUR DREAM\nGARAGE SPACE",
@@ -139,7 +139,10 @@ const serviceData: Record<string, ServiceData> = {
   },
 };
 
-const LearnMorePage: React.FC<LearnMorePageProps> = ({ type, showHowItWorks = true }) => {
+const LearnMorePage: React.FC<LearnMorePageProps> = ({
+  type,
+  showHowItWorks = true,
+}) => {
   const data = serviceData[type] || serviceData["metallic-epoxy"];
 
   return (
@@ -153,7 +156,11 @@ const LearnMorePage: React.FC<LearnMorePageProps> = ({ type, showHowItWorks = tr
       </section>
 
       {/* Video Section */}
-      <VideoPlayer videoUrl={data.videoUrl} title={`${data.title} Video`} compact={true} />
+      <VideoPlayer
+        videoUrl={data.videoUrl}
+        title={`${data.title} Video`}
+        playInView
+      />
 
       {/* CTA Button Section */}
       <section className={styles.ctaButtonSection}>
