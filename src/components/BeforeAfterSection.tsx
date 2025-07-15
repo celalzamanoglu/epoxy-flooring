@@ -19,16 +19,8 @@ const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
           {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
           <div className={styles.sliderWrapper}>
             <ImageComparisonSlider
-              imageBefore="/1.jpeg"
-              imageAfter="/2.jpg"
-              beforeAlt="Before image"
-              afterAlt="After image"
-            />
-          </div>
-          <div className={styles.sliderWrapper}>
-            <ImageComparisonSlider
-              imageBefore="/3.jpg"
-              imageAfter="/4.jpg"
+              imageBefore="/before_1.jpg"
+              imageAfter="/after_1.jpg"
               beforeAlt="Before image"
               afterAlt="After image"
             />
