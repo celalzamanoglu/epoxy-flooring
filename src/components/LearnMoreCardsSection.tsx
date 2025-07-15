@@ -7,14 +7,16 @@ const cards = [
   {
     bg: "/1.jpeg",
     small: "Restaurants • Homes • Showrooms • Warehouses • Countertops & More",
-    big: `METALLIC EPOXY FLOORING - ART MEETS DURABILITY`,
+    big: `METALLIC EPOXY FLOORING`,
+    description: "ART MEETS DURABILITY",
     button: "LEARN MORE",
     type: "metallic-epoxy",
   },
   {
     bg: "/3.jpg",
     small: "Garages • Patios • Pool Decs • Drive Ways • Basements & More",
-    big: "FLAKE EPOXY FLOORING - A UNIQUE FINISH FOR EVERY SPACE",
+    big: "FLAKE EPOXY FLOORING",
+    description: "INSTALLED IN JUST 1 DAY",
     button: "LEARN MORE",
     type: "flake-epoxy",
   },
@@ -22,6 +24,7 @@ const cards = [
     bg: "/2.jpg",
     small: "Commercial • Industrial • Residential Spaces",
     big: "CONCRETE POLISHING",
+    description: "SMOOTH, DURABLE, PROFESSIONAL FINISH",
     button: "LEARN MORE",
     type: "concrete-polishing",
   },
@@ -29,6 +32,7 @@ const cards = [
     bg: "/4.jpg",
     small: "Cabinets • Car lifts • Wall storage • Overhead racks",
     big: "GARAGE DESIGN",
+    description: "TRANSFORM YOUR SPACE COMPLETELY",
     button: "LEARN MORE",
     type: "garage-design",
   },
@@ -46,18 +50,13 @@ const LearnMoreCards: React.FC = () => {
       <div className={styles.cardsContainer}>
         {cards.map((card) => (
           <div className={styles.glowWrapper} key={card.big}>
-            <div
-              className={styles.card}
-              style={{ backgroundImage: `url(${card.bg})` }}
-            >
+            <div className={styles.card} style={{ backgroundImage: `url(${card.bg})` }}>
               <div className={styles.overlay} />
               <div className={styles.content}>
                 <span className={styles.small}>{card.small}</span>
                 <span className={styles.big}>{card.big}</span>
-                <Button
-                  className={styles.cardButton}
-                  onClick={() => handleCardClick(card.type)}
-                >
+                {card.description && <span className={styles.description}>{card.description}</span>}
+                <Button className={styles.cardButton} onClick={() => handleCardClick(card.type)}>
                   {card.button}
                 </Button>
               </div>

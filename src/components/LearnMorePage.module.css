@@ -32,38 +32,16 @@
   font-weight: 400;
 }
 
-/* Video Section */
-.videoSection {
-  padding: 0 0;
+/* CTA Button Section */
+.ctaButtonSection {
+  padding: 10px 0 40px;
   background: #1c1c1c;
 }
 
-.videoWrapper {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto 50px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
-
-.video {
-  width: 100%;
-  height: 500px;
-  border: none;
-  display: block;
-  pointer-events: none;
-  transition: pointer-events 0.1s ease;
-}
-
-.videoWrapper:hover .video {
-  pointer-events: auto;
-}
-
-.buttonWrapper {
-  text-align: center;
-  margin-top: 40px;
+.ctaButtonContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
