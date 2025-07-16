@@ -87,7 +87,7 @@ export function HeroSection() {
         content: "Hero Content",
         bgClass:
           "bg-gradient-to-br from-slate-900 via-gray-900 to-zinc-900 border-gray-700",
-        imageStyle: "bg-[url('/hero-content-bg.jpg')] bg-cover bg-center",
+        imageStyle: "bg-[url('/hero-content-bg.jpeg')] bg-cover bg-center",
         isHero: true,
       },
       {

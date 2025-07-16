@@ -19,7 +19,7 @@ const scrollingImages1 = [
   "/5.jpg",
   "/6.jpg",
   "/7.jpg",
-  "/hero-content-bg.jpg",
+  "/hero-content-bg.jpeg",
 ];
 
 const scrollingImages2 = [...scrollingImages1].reverse();

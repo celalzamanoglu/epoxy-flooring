@@ -14,7 +14,7 @@ const CtaSection = () => {
     "/5.jpg",
     "/6.jpg",
     "/7.jpg",
-    "/hero-content-bg.jpg",
+    "/hero-content-bg.jpeg",
     "/1.jpeg",
     "/2.jpg",
     "/3.jpg",
@@ -22,7 +22,7 @@ const CtaSection = () => {
     "/5.jpg",
     "/6.jpg",
     "/7.jpg",
-    "/hero-content-bg.jpg",
+    "/hero-content-bg.jpeg",
     "/1.jpeg",
     "/2.jpg",
     "/3.jpg",
@@ -30,7 +30,7 @@ const CtaSection = () => {
     "/5.jpg",
     "/6.jpg",
     "/7.jpg",
-    "/hero-content-bg.jpg",
+    "/hero-content-bg.jpeg",
     "/1.jpeg",
     "/2.jpg",
     "/3.jpg",
@@ -48,13 +48,21 @@ const CtaSection = () => {
         <div className={styles.imageGrid}>
           {images.map((src, index) => (
             <div key={index} className={styles.gridItem}>
-              <Image src={src} alt={`background image ${index + 1}`} width={200} height={150} />
+              <Image
+                src={src}
+                alt={`background image ${index + 1}`}
+                width={200}
+                height={150}
+              />
             </div>
           ))}
         </div>
         <div className={styles.content}>
           <h2>READY TO TRANSFORM YOUR SPACE?</h2>
-          <p>Get a durable, stunning epoxy floor. Let&apos;s create your unique design.</p>
+          <p>
+            Get a durable, stunning epoxy floor. Let&apos;s create your unique
+            design.
+          </p>
           <div className={styles.buttonContainer}>
             <Link href="/contact">
               <Button size="large">CONTACT US</Button>
