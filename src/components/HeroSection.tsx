@@ -87,7 +87,6 @@ export function HeroSection() {
         content: "Hero Content",
         bgClass:
           "bg-gradient-to-br from-slate-900 via-gray-900 to-zinc-900 border-gray-700",
-        imageStyle: "bg-[url('/hero-content-bg.jpeg')] bg-cover bg-center",
         isHero: true,
       },
       {
@@ -160,7 +159,27 @@ export function HeroSection() {
                 >
                   {/* Only show image for all cells, not hero content */}
                   <div className="relative h-full w-full">
-                    <div className={`absolute inset-0 ${cell.imageStyle}`} />
+                    {/* Video background for hero cell */}
+                    {cell.id === "cell1" ? (
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                      >
+                        <source
+                          src="/hero-content-bg-1080p.mp4"
+                          type="video/mp4"
+                        />
+                        <source
+                          src="/hero-content-bg-1080p.mp4"
+                          type="video/quicktime"
+                        />
+                      </video>
+                    ) : (
+                      <div className={`absolute inset-0 ${cell.imageStyle}`} />
+                    )}
                     {cell.id === "cell1" && (
                       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-green-100 border-gray-700 opacity-60" />
                     )}
