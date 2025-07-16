@@ -4,7 +4,7 @@ import VideoPlayer from "./VideoPlayer";
 const VideoSection: React.FC = () => {
   return (
     <VideoPlayer
-      videoUrl="/shorts-3.mov"
+      videoUrl="/shorts-3.mp4"
       muted={true}
       autoPlayInView={true}
       loop={true}

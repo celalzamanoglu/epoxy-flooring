@@ -35,7 +35,7 @@ const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
           {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
           {isMobile && (
             <VideoPlayer
-              videoUrl="/before_after_video.mov"
+              videoUrl="/shorts-2.mp4"
               muted={true}
               autoPlayInView={true}
               loop={true}
