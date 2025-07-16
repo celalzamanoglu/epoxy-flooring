@@ -168,14 +168,8 @@ export function HeroSection() {
                         playsInline
                         className="absolute inset-0 w-full h-full object-cover"
                       >
-                        <source
-                          src="/hero-content-bg-1080p.mp4"
-                          type="video/mp4"
-                        />
-                        <source
-                          src="/hero-content-bg-1080p.mp4"
-                          type="video/quicktime"
-                        />
+                        <source src="/wide-2.MOV" type="video/mp4" />
+                        <source src="/wide-2.MOV" type="video/quicktime" />
                       </video>
                     ) : (
                       <div className={`absolute inset-0 ${cell.imageStyle}`} />
