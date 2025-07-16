@@ -158,8 +158,10 @@ const LearnMorePage: React.FC<LearnMorePageProps> = ({
       {/* Video Section */}
       <VideoPlayer
         videoUrl={data.videoUrl}
-        title={`${data.title} Video`}
-        playInView
+        muted={true}
+        autoPlayInView={true}
+        loop={true}
+        videoType="full"
       />
 
       {/* CTA Button Section */}
