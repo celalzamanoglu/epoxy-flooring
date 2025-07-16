@@ -168,14 +168,13 @@ export function HeroSection() {
                         playsInline
                         className="absolute inset-0 w-full h-full object-cover"
                       >
-                        <source src="/wide-2.MOV" type="video/mp4" />
-                        <source src="/wide-2.MOV" type="video/quicktime" />
+                        <source src="/wide-2.mp4" type="video/mp4" />
                       </video>
                     ) : (
                       <div className={`absolute inset-0 ${cell.imageStyle}`} />
                     )}
                     {cell.id === "cell1" && (
-                      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-green-100 border-gray-700 opacity-60" />
+                      <div className="absolute inset-0 bg-gradient-to-tl from-slate-900 via-gray-900 to-green-100 border-gray-700 opacity-60" />
                     )}
                   </div>
                 </div>
