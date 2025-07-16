@@ -15,15 +15,25 @@
   background: #1c1c1c;
 }
 
-/* YouTube Shorts Section */
-.videoSectionShorts {
+/* Mobile Video Section */
+.videoSectionMobile {
   padding: 80px 0;
   background: #1c1c1c;
 }
 
-.videoSectionShortsCompact {
-  padding: 80px 0 20px;
+.videoSectionMobileFullscreen {
+  padding: 0;
   background: #1c1c1c;
+}
+
+/* Apply fullscreen only on mobile devices */
+@media (max-width: 768px) {
+  .videoSectionMobileFullscreen {
+    width: 100vw;
+    height: 100vh;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
 }
 
 .videoWrapper {
@@ -46,25 +56,40 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* YouTube Shorts Wrapper */
-.videoWrapperShorts {
+/* Mobile Video Wrapper */
+.videoWrapperMobile {
   position: relative;
   width: 100%;
-  max-width: 400px; /* Reverted to original value */
+  max-width: 400px;
   margin: 0 auto 50px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-.videoWrapperShortsCompact {
+.videoWrapperMobileFullscreen {
   position: relative;
   width: 100%;
-  max-width: 400px; /* Reverted to original value */
-  margin: 0 auto 0px;
+  max-width: 400px;
+  margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Apply fullscreen wrapper only on mobile devices */
+@media (max-width: 768px) {
+  .videoWrapperMobileFullscreen {
+    position: relative;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
+  }
 }
 
 .video {
@@ -88,24 +113,33 @@
   min-height: 100% !important;
 }
 
-/* YouTube Shorts Video */
-.videoShorts {
+/* Mobile Video */
+.videoMobile {
   width: 100%;
   height: 710px; /* 9:16 aspect ratio for 400px width */
   border: none;
   display: block;
-  pointer-events: auto; /* Allow interaction with YouTube controls */
+  pointer-events: auto;
   transition: all 0.1s ease;
 }
 
-/* Ensure HTML5 video elements in shorts have the same styling */
-.videoShorts video {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important; /* Keep cover for shorts to maintain aspect ratio */
-  border-radius: inherit;
-  max-width: none !important;
-  max-height: none !important;
+/* Fullscreen Mobile Video */
+.videoMobileFullscreen {
+  width: 100%;
+  height: 710px; /* Default height for larger screens */
+  border: none;
+  display: block;
+  pointer-events: auto;
+  transition: all 0.1s ease;
+}
+
+/* Apply fullscreen video only on mobile devices */
+@media (max-width: 768px) {
+  .videoMobileFullscreen {
+    height: 100vh !important;
+    width: 100vw !important;
+    object-fit: cover !important;
+  }
 }
 
 .buttonWrapper {
@@ -126,11 +160,11 @@
     max-width: 100%;
   }
 
-  .videoWrapperShorts {
+  .videoWrapperMobile {
     max-width: 350px;
   }
 
-  .videoShorts {
+  .videoMobile {
     height: 620px;
   }
 }
@@ -141,12 +175,11 @@
   }
 
   .videoSection,
-  .videoSectionShorts {
+  .videoSectionMobile {
     padding: 60px 0;
   }
 
-  .videoSectionCompact,
-  .videoSectionShortsCompact {
+  .videoSectionCompact {
     padding: 60px 0 10px;
   }
 
@@ -154,11 +187,11 @@
     height: 450px;
   }
 
-  .videoWrapperShorts {
+  .videoWrapperMobile {
     max-width: 300px;
   }
 
-  .videoShorts {
+  .videoMobile {
     height: 530px;
   }
 }
@@ -169,12 +202,11 @@
   }
 
   .videoSection,
-  .videoSectionShorts {
+  .videoSectionMobile {
     padding: 30px 0;
   }
 
-  .videoSectionCompact,
-  .videoSectionShortsCompact {
+  .videoSectionCompact {
     padding: 30px 0 0px;
   }
 
@@ -182,11 +214,11 @@
     height: 320px;
   }
 
-  .videoWrapperShorts {
+  .videoWrapperMobile {
     max-width: 250px;
   }
 
-  .videoShorts {
+  .videoMobile {
     height: 440px;
   }
 }
@@ -208,4 +240,49 @@
 .videoWrapperCompact.customSized {
   max-width: none !important;
   width: auto !important;
+}
+
+/* Video container and mute button */
+.videoContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Fullscreen mobile video container */
+@media (max-width: 768px) {
+  .videoSectionMobileFullscreen .videoContainer {
+    position: relative;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden;
+  }
+}
+
+.muteButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
+}
+
+.muteButton:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.muteButton:active {
+  transform: scale(0.95);
 }

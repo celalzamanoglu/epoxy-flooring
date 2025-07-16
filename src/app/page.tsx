@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Lenis from "lenis";
 
 import { HeroSection } from "@/components/HeroSection";
@@ -16,7 +16,16 @@ import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
     const lenis = new Lenis();
 
     function raf(time: number) {
@@ -27,13 +36,14 @@ export default function Home() {
     requestAnimationFrame(raf);
 
     return () => {
+      window.removeEventListener("resize", checkScreenSize);
       lenis.destroy();
     };
   }, []);
   return (
     <main className="mt-[50vh] mb-[100vh] bg-[#1C1C1C]">
       <HeroSection />
-      <VideoSection />
+      {isMobile && <VideoSection />}
       <NumbersSection />
       <LearnMoreCards />
       <ReviewsSection />

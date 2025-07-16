@@ -1,30 +1,17 @@
 import React from "react";
-import styles from "./VideoSection.module.css";
+import VideoPlayer from "./VideoPlayer";
 
 const VideoSection: React.FC = () => {
   return (
-    <section className={styles.videoSection}>
-      <div className={styles.container}>
-        <iframe
-          width="315"
-          height="560"
-          src="https://www.youtube.com/embed/qSXVdGwdP1k"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
-        <iframe
-          width="315"
-          height="560"
-          src="https://www.youtube.com/embed/qSXVdGwdP1k"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
-      </div>
-    </section>
+    <VideoPlayer
+      videoUrl="/shorts-3.mov"
+      muted={true}
+      autoPlayInView={true}
+      loop={true}
+      muteButtonOnly={true}
+      fullscreen={true}
+      videoType="mobile"
+    />
   );
 };
 
