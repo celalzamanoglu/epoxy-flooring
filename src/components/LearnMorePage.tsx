@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./LearnMorePage.module.css";
-import VideoPlayer from "./VideoPlayer";
+/* import VideoPlayer from "./VideoPlayer"; */
 import Button from "./Button";
 import Link from "next/link";
 import HexagonSection from "./HexagonSection";
@@ -156,13 +156,13 @@ const LearnMorePage: React.FC<LearnMorePageProps> = ({
       </section>
 
       {/* Video Section */}
-      <VideoPlayer
+      {/* <VideoPlayer
         videoUrl={data.videoUrl}
         muted={true}
         autoPlayInView={true}
         loop={true}
         videoType="full"
-      />
+      /> */}
 
       {/* CTA Button Section */}
       <section className={styles.ctaButtonSection}>
