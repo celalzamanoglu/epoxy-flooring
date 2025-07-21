@@ -101,7 +101,7 @@ export function HeroSection() {
         content: "Industrial Coatings",
         description: "Heavy-Duty Performance",
         bgClass: "bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900",
-        imageStyle: "bg-[url('/2.jpg')] bg-cover bg-center",
+        imageStyle: "bg-[url('/2.jpeg')] bg-cover bg-center",
       },
       {
         id: "cell3",
@@ -109,28 +109,28 @@ export function HeroSection() {
         description: "Metallic & Color Flakes",
         bgClass:
           "bg-gradient-to-br from-amber-800 via-yellow-700 to-orange-800",
-        imageStyle: "bg-[url('/3.jpg')] bg-cover bg-center",
+        imageStyle: "bg-[url('/3.jpeg')] bg-cover bg-center",
       },
       {
         id: "cell4",
         content: "Commercial Floors",
         description: "High-Traffic Solutions",
         bgClass: "bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900",
-        imageStyle: "bg-[url('/4.jpg')] bg-cover bg-center",
+        imageStyle: "bg-[url('/4.jpeg')] bg-cover bg-center",
       },
       {
         id: "cell5",
         content: "Basement Waterproofing",
         description: "Moisture Protection",
         bgClass: "bg-gradient-to-br from-cyan-900 via-blue-800 to-slate-900",
-        imageStyle: "bg-[url('/5.jpg')] bg-cover bg-center",
+        imageStyle: "bg-[url('/5.jpeg')] bg-cover bg-center",
       },
       {
         id: "cell6",
         content: "Outdoor Patios",
         description: "Weather Resistant",
         bgClass: "bg-gradient-to-br from-stone-700 via-gray-600 to-slate-700",
-        imageStyle: "bg-[url('/6.jpg')] bg-cover bg-center",
+        imageStyle: "bg-[url('/6.jpeg')] bg-cover bg-center",
       },
     ],
     []

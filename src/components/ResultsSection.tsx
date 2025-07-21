@@ -4,22 +4,21 @@ import Image from "next/image";
 
 const staticImages = [
   "/1.jpeg",
-  "/2.jpg",
-  "/3.jpg",
-  "/4.jpg",
-  "/5.jpg",
-  "/6.jpg",
+  "/2.jpeg",
+  "/3.jpeg",
+  "/4.jpeg",
+  "/5-vertical.jpeg",
+  "/6.jpeg",
 ];
 
 const scrollingImages1 = [
   "/1.jpeg",
-  "/2.jpg",
-  "/3.jpg",
-  "/4.jpg",
-  "/5.jpg",
-  "/6.jpg",
-  "/7.jpg",
-  "/hero-content-bg.jpeg",
+  "/2.jpeg",
+  "/3.jpeg",
+  "/4.jpeg",
+  "/5-vertical.jpeg",
+  "/6.jpeg",
+  "/7.jpeg",
 ];
 
 const scrollingImages2 = [...scrollingImages1].reverse();
