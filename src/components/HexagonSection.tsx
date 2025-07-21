@@ -13,8 +13,8 @@ export interface HexagonSectionProps {
   buttonText?: string;
 }
 
-const images1 = ["/1.jpeg", "/2.jpg", "/3.jpg"];
-const images2 = ["/4.jpg", "/5.jpg", "/6.jpg"];
+const images1 = ["/1.jpeg", "/2.jpeg", "/3.jpeg"];
+const images2 = ["/4.jpeg", "/5.jpeg", "/6.jpeg"];
 
 const defaultFeatures = [
   {
@@ -33,9 +33,21 @@ const defaultFeatures = [
 
 const CheckIcon = () => (
   <span className={styles.checkIcon}>
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <circle cx="14" cy="14" r="14" fill="#2ee9c7" />
-      <path d="M9 14.5l3 3 6-6" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M9 14.5l3 3 6-6"
+        stroke="#fff"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   </span>
 );
