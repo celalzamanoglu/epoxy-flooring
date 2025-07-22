@@ -14,9 +14,11 @@ import ResultsSection from "@/components/ResultsSection";
 import BeforeAfterSection from "@/components/BeforeAfterSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
+import EmailCollector from "@/components/EmailCollector";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
+  const [showEmailCollector, setShowEmailCollector] = useState(true);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -53,6 +55,8 @@ export default function Home() {
       <ResultsSection />
       <CtaSection />
       <Footer />
+
+      <EmailCollector isOpen={showEmailCollector} onClose={() => setShowEmailCollector(false)} />
     </main>
   );
 }
