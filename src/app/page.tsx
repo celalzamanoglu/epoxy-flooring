@@ -15,19 +15,13 @@ import BeforeAfterSection from "@/components/BeforeAfterSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import EmailCollector from "@/components/EmailCollector";
+import { useIsMobile } from "@/lib/useIsMobile";
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile();
   const [showEmailCollector, setShowEmailCollector] = useState(true);
 
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-
     const lenis = new Lenis();
 
     function raf(time: number) {
@@ -38,7 +32,6 @@ export default function Home() {
     requestAnimationFrame(raf);
 
     return () => {
-      window.removeEventListener("resize", checkScreenSize);
       lenis.destroy();
     };
   }, []);

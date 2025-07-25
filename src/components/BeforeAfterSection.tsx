@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./BeforeAfterSection.module.css";
 import { ImageComparisonSlider } from "./ImageComparisonSlider";
 import VideoPlayer from "./VideoPlayer";
+import { useIsMobile } from "@/lib/useIsMobile";
 
 interface BeforeAfterSectionProps {
   title?: string;
@@ -12,20 +13,7 @@ const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
   title = "BEFORE & AFTER",
   subtitle = "See the transformation with our expert epoxy flooring installations",
 }) => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-
-    return () => {
-      window.removeEventListener("resize", checkScreenSize);
-    };
-  }, []);
+  const isMobile = useIsMobile();
 
   return (
     <section className={styles.section}>

@@ -4,7 +4,72 @@
   padding: 0 20px;
 }
 
-/* Hero Section */
+/* Hero and Video Section - Side by Side Layout */
+.heroVideoSection {
+  padding: 80px 0 20px;
+}
+
+.heroVideoContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.heroContent {
+  flex: 1;
+  text-align: left;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* When no video, hero content takes full width */
+.withoutVideo .heroContent {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Center the CTA button when no video */
+.withoutVideo .ctaButtonWrapper {
+  justify-content: center;
+}
+
+/* Ensure left alignment on desktop when video is present */
+@media (min-width: 769px) {
+  .withVideo .heroContent {
+    text-align: left;
+    padding-left: 120px;
+  }
+
+  .withVideo .ctaButtonWrapper {
+    justify-content: flex-start;
+  }
+}
+
+.videoContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -45px;
+}
+
+/* Mobile Video Wrapper - Outside containers */
+.mobileVideoWrapper {
+  display: none;
+}
+
+.ctaButtonWrapper {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Hero Section - Fallback for mobile */
 .heroSection {
   padding: 80px 0 20px;
   text-align: center;
@@ -30,6 +95,7 @@
   margin: 0 auto;
   color: #b0b0b0;
   font-weight: 400;
+  white-space: pre-line;
 }
 
 /* CTA Button Section */
@@ -49,6 +115,38 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .heroVideoContainer {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .heroContent {
+    text-align: center;
+    padding-top: 0;
+  }
+
+  .videoContent {
+    display: none; /* Hide desktop video on mobile */
+  }
+
+  .mobileVideoWrapper {
+    display: block; /* Show mobile video on mobile */
+  }
+
+  .ctaButtonWrapper {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroVideoSection {
+    padding: 60px 0 40px;
+  }
+
+  .heroVideoContainer {
+    gap: 30px;
+  }
+
   .heroSection {
     padding: 60px 0 40px;
   }
@@ -73,6 +171,15 @@
 @media (max-width: 480px) {
   .container {
     padding: 0 15px;
+  }
+
+  .heroVideoSection {
+    padding: 40px 0 30px;
+  }
+
+  .heroVideoContainer {
+    padding: 0 15px;
+    gap: 25px;
   }
 
   .heroSection {
