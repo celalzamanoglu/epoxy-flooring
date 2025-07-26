@@ -5,7 +5,6 @@ import ReviewsSection from "@/components/ReviewsSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
-import { FaWhatsapp, FaInstagram, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 import styles from "./contact.module.css";
 
 const ContactPage = () => {
