@@ -20,8 +20,6 @@ const EmailCollector: React.FC<EmailCollectorProps> = ({ onClose, isOpen = true 
       "service_a3ecr2j",
       "template_1i9eeza",
       {
-        from_name: "Client",
-        to_name: "Milkyway Epoxy",
         title: "Client Claimed Discount",
         message: "Client with email " + email + " claimed $699 discount",
       },

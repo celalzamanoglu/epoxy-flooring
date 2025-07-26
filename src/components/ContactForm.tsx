@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { FaMapMarkerAlt, FaSpinner, FaWhatsapp, FaInstagram, FaPhone, FaEnvelope } from "react-icons/fa";
 import { getCurrentLocation, LocationData, GeolocationError } from "@/lib/geolocation";
+import emailjs from "@emailjs/browser";
 import Button from "./Button";
 import styles from "./ContactForm.module.css";
 
@@ -70,8 +71,23 @@ const ContactForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Here you would normally send the data to your backend
-      console.log("Form submitted:", formData);
+      // Send email using EmailJS
+      await emailjs.send(
+        "service_a3ecr2j",
+        "template_1i9eeza",
+        {
+          title: "New Contact Form Submission",
+          message: `Contact Form Submission from ${formData.fullName}
+          Phone: ${formData.phoneNumber}
+          Email: ${formData.email}
+          Project Type: ${formData.projectType}
+          Floor Size: ${formData.floorSize}
+          Address: ${formData.address}, ${formData.zipCode}
+          Preferred Contact: ${formData.preferredContact}`,
+        },
+        "bAJ0an0KnC_BmMdP9"
+      );
+
       alert("Thank you! We'll be in touch soon.");
 
       // Reset form
