@@ -134,21 +134,37 @@ const reverseGeocode = async (lat: number, lng: number): Promise<Partial<Locatio
     if (data && data.address) {
       const address = data.address;
 
-      // Build formatted address
-      const addressParts = [
+      // Build street address (most specific parts)
+      const streetParts = [
         address.house_number,
-        address.road,
-        address.neighbourhood,
-        address.suburb,
-        address.city || address.town || address.village,
-        address.state,
+        address.road || address.street || address.pedestrian || address.footway,
       ].filter(Boolean);
 
+      // Build area/location parts (less specific)
+      const areaParts = [
+        address.neighbourhood || address.suburb || address.district || address.quarter,
+        address.city || address.town || address.village || address.municipality,
+        address.county,
+        address.state || address.province || address.region,
+      ].filter(Boolean);
+
+      // Combine street and area, removing duplicates
+      const allParts = [...streetParts, ...areaParts];
+      const uniqueParts = [...new Set(allParts)];
+
+      // Format the complete address (without postcode - it has its own field)
+      let formattedAddress = uniqueParts.join(", ");
+
+      // Add country if it's not US (assuming most users are US-based)
+      if (address.country && address.country_code !== "us") {
+        formattedAddress += `, ${address.country}`;
+      }
+
       return {
-        address: addressParts.join(", "),
+        address: formattedAddress,
         zipCode: address.postcode || "",
-        city: address.city || address.town || address.village || "",
-        state: address.state || "",
+        city: address.city || address.town || address.village || address.municipality || "",
+        state: address.state || address.province || address.region || "",
       };
     }
 

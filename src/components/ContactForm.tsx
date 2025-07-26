@@ -96,7 +96,7 @@ const ContactForm: React.FC = () => {
   return (
     <div className={styles.formContainer}>
       <div className={styles.formHeader}>
-        <h2 className={styles.formTitle}>Get Your Free Quote</h2>
+        <h2 className={styles.formTitle}>Contact Us</h2>
         <p className={styles.formDescription}>
           Fill out the form below and we&apos;ll get back to you with a personalized quote for your project.
         </p>
