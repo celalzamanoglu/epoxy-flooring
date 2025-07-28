@@ -3,28 +3,16 @@
   min-height: 100vh;
 }
 
-.contactSection {
-  padding: 80px 20px;
+.headerSection {
+  padding: 100px 20px 60px 20px;
   background-color: #1c1c1c;
   color: white;
+  text-align: center;
 }
 
-.container {
-  max-width: 1200px;
+.headerContainer {
+  max-width: 800px;
   margin: 0 auto;
-}
-
-.contentGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-
-.textContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 }
 
 .title {
@@ -48,100 +36,50 @@
   margin: 0;
 }
 
-.contactInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding-left: 2rem;
+.formSection {
+  padding: 80px 20px;
+  background: #1c1c1c;
+  position: relative;
 }
 
-.contactItem {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.icon {
-  font-size: 1.5rem;
-  min-width: 2rem;
-  text-align: center;
-}
-
-.text {
-  font-size: 1.1rem;
-  color: #e0e0e0;
-  font-weight: 400;
-}
-
-.link {
-  font-size: 1.1rem;
-  color: #6ea8fa;
-  text-decoration: none;
-  font-weight: 400;
-  transition: color 0.2s ease;
-}
-
-.link:hover {
-  color: #b16cea;
-  text-decoration: underline;
-}
-
-.tagline {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #333;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #b3f0e6;
-  font-style: italic;
-  text-align: center;
+.formSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(4, 217, 210, 0.2) 0%,
+    rgba(4, 217, 210, 0.1) 30%,
+    rgba(110, 168, 250, 0.08) 60%,
+    transparent 85%
+  );
+  z-index: 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .contactSection {
-    padding: 60px 20px;
-  }
-
-  .contentGrid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .contactInfo {
-    padding-left: 0;
+  .headerSection {
+    padding: 80px 20px 40px 20px;
   }
 
   .title {
     margin-bottom: 1.5rem;
   }
 
-  .tagline {
-    margin-top: 1.5rem;
-    font-size: 1.1rem;
+  .formSection {
+    padding: 60px 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .contactSection {
+  .headerSection {
+    padding: 60px 15px 30px 15px;
+  }
+
+  .formSection {
     padding: 40px 15px;
-  }
-
-  .contentGrid {
-    gap: 2rem;
-  }
-
-  .contactItem {
-    gap: 0.8rem;
-  }
-
-  .icon {
-    font-size: 1.3rem;
-    min-width: 1.8rem;
-  }
-
-  .text,
-  .link {
-    font-size: 1rem;
   }
 }
