@@ -24,7 +24,7 @@ const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({
           {isMobile && (
             <VideoPlayer
               videoUrl="/shorts-2.mp4"
-              muted={true}
+              muted={isMobile}
               autoPlayInView={true}
               loop={true}
               disableControls={true}

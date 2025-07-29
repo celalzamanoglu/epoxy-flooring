@@ -9,7 +9,7 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.topSection}>
           <div className={styles.logoSection}>
-            <span className={styles.brandName}>Milkway Epoxy</span>
+            <span className={styles.brandName}>Milkyway Epoxy</span>
           </div>
           <div className={styles.linksSection}>
             <div className={styles.linksColumn}>
@@ -39,7 +39,7 @@ const Footer = () => {
               <FaTiktok />
             </a>
           </div>
-          <p>© 2024 — Copyright Milkway Epoxy</p>
+          <p>© 2024 — Copyright Milkyway Epoxy</p>
         </div>
       </div>
     </footer>
