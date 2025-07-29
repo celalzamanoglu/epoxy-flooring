@@ -26,6 +26,7 @@ interface ServiceData {
     features: { title: string; desc: string }[];
     ctaDesc: string;
     buttonText: string;
+    images?: string[][];
   };
 }
 
@@ -82,6 +83,10 @@ const serviceData: Record<string, ServiceData> = {
       ctaDesc:
         "Our flake epoxy creates beautiful, textured surfaces that are both functional and visually appealing. Perfect for outdoor spaces and high-traffic areas that need both style and durability.",
       buttonText: "GET FLAKE EPOXY QUOTE",
+      images: [
+        ["/flake-1.jpeg", "/flake-2.jpeg", "/flake-3.jpeg", "/flake-4.jpeg"],
+        ["/flake-4.jpeg", "/flake-1.jpeg", "/flake-2.jpeg", "/flake-3.jpeg"],
+      ],
     },
   },
   "concrete-polishing": {
@@ -166,7 +171,7 @@ const LearnMorePage: React.FC<LearnMorePageProps> = ({ type, showHowItWorks = tr
             <div className={styles.videoContent}>
               <VideoPlayer
                 videoUrl={data.videoUrl}
-                muted={true}
+                muted={isMobile}
                 autoPlayInView={true}
                 loop={true}
                 videoType="mobile"
@@ -182,7 +187,7 @@ const LearnMorePage: React.FC<LearnMorePageProps> = ({ type, showHowItWorks = tr
         <div className={styles.mobileVideoWrapper}>
           <VideoPlayer
             videoUrl={data.videoUrl}
-            muted={true}
+            muted={isMobile}
             autoPlayInView={true}
             loop={true}
             videoType="mobile"
@@ -199,6 +204,7 @@ const LearnMorePage: React.FC<LearnMorePageProps> = ({ type, showHowItWorks = tr
         features={data.hexagonData.features}
         ctaDesc={data.hexagonData.ctaDesc}
         buttonText={data.hexagonData.buttonText}
+        images={data.hexagonData.images}
       />
 
       {/* How It Works Section */}

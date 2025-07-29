@@ -11,6 +11,7 @@ export interface HexagonSectionProps {
   features?: { title: string; desc: string }[];
   ctaDesc?: string;
   buttonText?: string;
+  images?: string[][];
 }
 
 const images1 = ["/1.jpeg", "/2.jpeg", "/3.jpeg"];
@@ -33,21 +34,9 @@ const defaultFeatures = [
 
 const CheckIcon = () => (
   <span className={styles.checkIcon}>
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 28 28"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="14" cy="14" r="14" fill="#2ee9c7" />
-      <path
-        d="M9 14.5l3 3 6-6"
-        stroke="#fff"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M9 14.5l3 3 6-6" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   </span>
 );
@@ -59,6 +48,7 @@ const HexagonSection: React.FC<HexagonSectionProps> = ({
   features = defaultFeatures,
   ctaDesc = "Get a stunning, long-lasting floor with our expert epoxy installation. Fast, clean, and fully customized for your home or business. Discover the Milkyway difference today!",
   buttonText = "CONTACT US",
+  images = [images1, images2],
 }) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, {
@@ -134,14 +124,14 @@ const HexagonSection: React.FC<HexagonSectionProps> = ({
       <div className={styles.hexagon}>
         <div className={styles.imageListContainer}>
           <div className={styles.imageList + " " + styles.slideUp}>
-            {[...images1, ...images1].map((src, i) => (
+            {[...images[0], ...images[0]].map((src, i) => (
               <div className={styles.imageWrapper} key={src + i}>
                 <img src={src} alt="Epoxy floor" className={styles.image} />
               </div>
             ))}
           </div>
           <div className={styles.imageList + " " + styles.slideUpReverse}>
-            {[...images2, ...images2].map((src, i) => (
+            {[...images[1], ...images[1]].map((src, i) => (
               <div className={styles.imageWrapper} key={src + i}>
                 <img src={src} alt="Epoxy floor" className={styles.image} />
               </div>
