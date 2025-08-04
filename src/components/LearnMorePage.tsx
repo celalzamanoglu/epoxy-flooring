@@ -141,6 +141,10 @@ const serviceData: Record<string, ServiceData> = {
       ctaDesc:
         "We transform ordinary garages into extraordinary spaces with our comprehensive design and installation services. Create a garage that's both functional and beautiful.",
       buttonText: "GET GARAGE DESIGN QUOTE",
+      images: [
+        ["/garage-1.jpeg", "/garage-2.jpeg", "/garage-3.jpeg", "/garage-2.jpeg"],
+        ["/garage-3.jpeg", "/garage-1.jpeg", "/garage-2.jpeg", "/garage-1.jpeg"],
+      ],
     },
   },
 };
