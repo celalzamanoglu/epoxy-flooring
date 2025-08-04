@@ -13,7 +13,7 @@ const cards = [
     type: "metallic-epoxy",
   },
   {
-    bg: "/3.jpeg",
+    bg: "/flake-1.jpeg",
     small: "Garages • Patios • Pool Decs • Drive Ways • Basements & More",
     big: "FLAKE EPOXY FLOORING",
     description: "INSTALLED IN JUST 1 DAY",
@@ -29,7 +29,7 @@ const cards = [
     type: "concrete-polishing",
   },
   {
-    bg: "/4.jpeg",
+    bg: "/garage-1.jpeg",
     small: "Cabinets • Car lifts • Wall storage • Overhead racks",
     big: "GARAGE DESIGN",
     description: "TRANSFORM YOUR SPACE COMPLETELY",
@@ -50,21 +50,13 @@ const LearnMoreCards: React.FC = () => {
       <div className={styles.cardsContainer}>
         {cards.map((card) => (
           <div className={styles.glowWrapper} key={card.big}>
-            <div
-              className={styles.card}
-              style={{ backgroundImage: `url(${card.bg})` }}
-            >
+            <div className={styles.card} style={{ backgroundImage: `url(${card.bg})` }}>
               <div className={styles.overlay} />
               <div className={styles.content}>
                 <span className={styles.small}>{card.small}</span>
                 <span className={styles.big}>{card.big}</span>
-                {card.description && (
-                  <span className={styles.description}>{card.description}</span>
-                )}
-                <Button
-                  className={styles.cardButton}
-                  onClick={() => handleCardClick(card.type)}
-                >
+                {card.description && <span className={styles.description}>{card.description}</span>}
+                <Button className={styles.cardButton} onClick={() => handleCardClick(card.type)}>
                   {card.button}
                 </Button>
               </div>
