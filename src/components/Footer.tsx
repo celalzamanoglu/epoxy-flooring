@@ -26,16 +26,16 @@ const Footer = () => {
         </div>
         <div className={styles.bottomSection}>
           <div className={styles.socialIcons}>
-            <a href="https://instagram.com/milkywayepoxyllc/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/milkywayepoxyusa/" target="_blank" rel="noopener noreferrer">
               <FaInstagram />
             </a>
-            <a href="https://youtube.com/@milkywayepoxy" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/@MilkywayEpoxyLLC" target="_blank" rel="noopener noreferrer">
               <FaYoutube />
             </a>
             <a href="https://wa.link/milkywayepoxy" target="_blank" rel="noopener noreferrer">
               <FaWhatsapp />
             </a>
-            <a href="https://tiktok.com/@milkywayepoxyllc" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.tiktok.com/@milkywayepoxy" target="_blank" rel="noopener noreferrer">
               <FaTiktok />
             </a>
           </div>
