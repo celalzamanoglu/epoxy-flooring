@@ -426,12 +426,12 @@ const ContactForm: React.FC = () => {
             <div className={styles.contactDetails}>
               <span className={styles.contactLabel}>Instagram</span>
               <a
-                href="https://instagram.com/milkywayepoxy"
+                href="https://www.instagram.com/milkywayepoxyusa/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.contactLink}
               >
-                @milkywayepoxy
+                @milkywayepoxyusa
               </a>
             </div>
           </div>
