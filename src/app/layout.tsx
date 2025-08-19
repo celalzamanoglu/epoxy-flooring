@@ -27,14 +27,7 @@ export const metadata: Metadata = {
       "Nationwide epoxy flooring and garage design experts. We deliver beautiful, durable floors and garage systems in 1 day. Trusted by homeowners, restaurants, warehouses, and businesses across the U.S.",
     url: "https://milkywayepoxy.com",
     siteName: "Milkyway Epoxy",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Milkyway Epoxy - Flake & Metallic Floor Specialists",
-      },
-    ],
+
     locale: "en_US",
     type: "website",
   },
@@ -43,7 +36,6 @@ export const metadata: Metadata = {
     title: "Milkyway Epoxy | Nationwide Epoxy Floor & Garage Experts",
     description:
       "Durable, stylish epoxy floors and garage designs — completed in just 1 day. From South Florida to across the U.S., we deliver premium results fast.",
-    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
