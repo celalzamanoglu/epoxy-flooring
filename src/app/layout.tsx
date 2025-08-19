@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import { milkywaySchemaOrg } from "@/lib/schemaOrg";
+import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,7 +28,14 @@ export const metadata: Metadata = {
       "Nationwide epoxy flooring and garage design experts. We deliver beautiful, durable floors and garage systems in 1 day. Trusted by homeowners, restaurants, warehouses, and businesses across the U.S.",
     url: "https://milkywayepoxy.com",
     siteName: "Milkyway Epoxy",
-
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Milkyway Epoxy - Flake & Metallic Floor Specialists",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
@@ -36,6 +44,14 @@ export const metadata: Metadata = {
     title: "Milkyway Epoxy | Nationwide Epoxy Floor & Garage Experts",
     description:
       "Durable, stylish epoxy floors and garage designs — completed in just 1 day. From South Florida to across the U.S., we deliver premium results fast.",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Milkyway Epoxy - Flake & Metallic Floor Specialists",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -62,6 +78,21 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(milkywaySchemaOrg) }} />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
+        {/* Load gtag.js */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=AW-17396887782`}
+          strategy="afterInteractive" // use "beforeInteractive" to force <head> placement
+        />
+
+        {/* Init + config */}
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17396887782');
+          `}
+        </Script>
         <Navbar />
         {children}
       </body>
