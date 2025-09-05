@@ -73,11 +73,7 @@ export function HeroSection() {
     : 0.5;
 
   // Inverse scale for the content to maintain proportional size
-  const contentScale = useTransform(
-    scrollYProgress,
-    [0, 0.8],
-    [contentStartScale, contentEndScale]
-  );
+  const contentScale = useTransform(scrollYProgress, [0, 0.8], [contentStartScale, contentEndScale]);
 
   // Original 7-cell layout for larger screens
   const cells: Cell[] = useMemo(
@@ -85,8 +81,7 @@ export function HeroSection() {
       {
         id: "cell1",
         content: "Hero Content",
-        bgClass:
-          "bg-gradient-to-br from-slate-900 via-gray-900 to-zinc-900 border-gray-700",
+        bgClass: "bg-gradient-to-br from-slate-900 via-gray-900 to-zinc-900 border-gray-700",
         isHero: true,
       },
       {
@@ -94,7 +89,7 @@ export function HeroSection() {
         content: "Garage Flooring",
         description: "Durable & Chemical Resistant",
         bgClass: "bg-gradient-to-br from-gray-800 via-gray-700 to-slate-600",
-        imageStyle: "bg-[url('/1.jpeg')] bg-cover bg-center",
+        imageStyle: "bg-[url('/image0.jpeg')] bg-cover bg-center",
       },
       {
         id: "cell2b",
@@ -107,8 +102,7 @@ export function HeroSection() {
         id: "cell3",
         content: "Decorative Epoxy",
         description: "Metallic & Color Flakes",
-        bgClass:
-          "bg-gradient-to-br from-amber-800 via-yellow-700 to-orange-800",
+        bgClass: "bg-gradient-to-br from-amber-800 via-yellow-700 to-orange-800",
         imageStyle: "bg-[url('/3.jpeg')] bg-cover bg-center",
       },
       {
@@ -116,7 +110,7 @@ export function HeroSection() {
         content: "Commercial Floors",
         description: "High-Traffic Solutions",
         bgClass: "bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900",
-        imageStyle: "bg-[url('/4.jpeg')] bg-cover bg-center",
+        imageStyle: "bg-[url('/image1.jpeg')] bg-cover bg-center",
       },
       {
         id: "cell5",
@@ -152,22 +146,12 @@ export function HeroSection() {
           >
             {cells.map((cell) => (
               <div key={cell.id} className={styles.el}>
-                <div
-                  className={`${styles.imageContainer} ${
-                    cell.bgClass
-                  } overflow-hidden ${cell.imageStyle || ""}`}
-                >
+                <div className={`${styles.imageContainer} ${cell.bgClass} overflow-hidden ${cell.imageStyle || ""}`}>
                   {/* Only show image for all cells, not hero content */}
                   <div className="relative h-full w-full">
                     {/* Video background for hero cell */}
                     {cell.id === "cell1" ? (
-                      <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover"
-                      >
+                      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
                         <source src="/wide-2.mp4" type="video/mp4" />
                       </video>
                     ) : (
