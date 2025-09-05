@@ -50,16 +50,14 @@ const CtaSection = () => {
                 alt={`background image ${index + 1}`}
                 width={200}
                 height={150}
+                sizes="(max-width: 768px) 45vw, 200px"
               />
             </div>
           ))}
         </div>
         <div className={styles.content}>
           <h2>READY TO TRANSFORM YOUR SPACE?</h2>
-          <p>
-            Get a durable, stunning epoxy floor. Let&apos;s create your unique
-            design.
-          </p>
+          <p>Get a durable, stunning epoxy floor. Let&apos;s create your unique design.</p>
           <div className={styles.buttonContainer}>
             <Link href="/contact">
               <Button size="large">CONTACT US</Button>

@@ -2,34 +2,13 @@ import React from "react";
 import styles from "./ResultsSection.module.css";
 import Image from "next/image";
 
-const staticImages = [
-  "/1.jpeg",
-  "/2.jpeg",
-  "/3.jpeg",
-  "/4.jpeg",
-  "/5-vertical.jpeg",
-  "/6.jpeg",
-];
+const staticImages = ["/1.jpeg", "/2.jpeg", "/3.jpeg", "/4.jpeg", "/5-vertical.jpeg", "/6.jpeg"];
 
-const scrollingImages1 = [
-  "/1.jpeg",
-  "/2.jpeg",
-  "/3.jpeg",
-  "/4.jpeg",
-  "/5-vertical.jpeg",
-  "/6.jpeg",
-  "/7.jpeg",
-];
+const scrollingImages1 = ["/1.jpeg", "/2.jpeg", "/3.jpeg", "/4.jpeg", "/5-vertical.jpeg", "/6.jpeg", "/7.jpeg"];
 
 const scrollingImages2 = [...scrollingImages1].reverse();
 
-function ImageRow({
-  images,
-  reverse = false,
-}: {
-  images: string[];
-  reverse?: boolean;
-}) {
+function ImageRow({ images, reverse = false }: { images: string[]; reverse?: boolean }) {
   const allImages = [...images, ...images];
   return (
     <div className={reverse ? styles.rowReverse : styles.row}>
@@ -42,6 +21,7 @@ function ImageRow({
               width={300}
               height={200}
               className={styles.image}
+              sizes="(max-width: 768px) 70vw, 300px"
             />
           </div>
         ))}
@@ -63,6 +43,7 @@ const ResultsSection = () => {
               width={400}
               height={250}
               className={styles.image}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
             />
           </div>
         ))}
