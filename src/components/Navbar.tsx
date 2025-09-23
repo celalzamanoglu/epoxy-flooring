@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import Button from "./Button";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
+import Image from "next/image";
 
 const services = [
   { key: "metallic-epoxy", label: "Metallic Epoxy" },
@@ -37,7 +38,15 @@ const Navbar: React.FC = () => {
         <Link href="/" className={styles.brandLink}>
           {/* Brand logo image */}
           <div className={styles.logoContainer}>
-            <img src="/brand-logo.png" alt="Milkyway Epoxy Logo" width="48" height="48" className={styles.logoImage} />
+            <Image
+              src="/brand-logo.png"
+              alt="Milkyway Epoxy Logo"
+              width={48}
+              height={48}
+              priority
+              className={styles.logoImage}
+              sizes="48px"
+            />
           </div>
           <div className={styles.brandContainer}>
             <span className={styles.brandName}>Milkyway Epoxy</span>

@@ -3,6 +3,7 @@ import styles from "./HexagonSection.module.css";
 import { motion, useInView } from "framer-motion";
 import Button from "./Button";
 import Link from "next/link";
+import Image from "next/image";
 
 export interface HexagonSectionProps {
   hexagonPosition?: "left" | "right";
@@ -126,14 +127,26 @@ const HexagonSection: React.FC<HexagonSectionProps> = ({
           <div className={styles.imageList + " " + styles.slideUp}>
             {[...images[0], ...images[0]].map((src, i) => (
               <div className={styles.imageWrapper} key={src + i}>
-                <img src={src} alt="Epoxy floor" className={styles.image} />
+                <Image
+                  src={src}
+                  alt="Epoxy floor"
+                  fill
+                  className={styles.image}
+                  sizes="(max-width: 1100px) 160px, 310px"
+                />
               </div>
             ))}
           </div>
           <div className={styles.imageList + " " + styles.slideUpReverse}>
             {[...images[1], ...images[1]].map((src, i) => (
               <div className={styles.imageWrapper} key={src + i}>
-                <img src={src} alt="Epoxy floor" className={styles.image} />
+                <Image
+                  src={src}
+                  alt="Epoxy floor"
+                  fill
+                  className={styles.image}
+                  sizes="(max-width: 1100px) 160px, 310px"
+                />
               </div>
             ))}
           </div>

@@ -25,9 +25,7 @@ export const ImageComparisonSlider: React.FC<ImageComparisonSliderProps> = ({
     setSliderPosition(percent);
   };
 
-  const handleMouseMove = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (!isDragging) return;
     const rect = event.currentTarget.getBoundingClientRect();
     handleMove(event.clientX, rect);
@@ -46,11 +44,7 @@ export const ImageComparisonSlider: React.FC<ImageComparisonSliderProps> = ({
   const handleInteractionEnd = () => setIsDragging(false);
 
   return (
-    <div
-      className="w-full flex justify-center"
-      onMouseUp={handleInteractionEnd}
-      onTouchEnd={handleInteractionEnd}
-    >
+    <div className="w-full flex justify-center" onMouseUp={handleInteractionEnd} onTouchEnd={handleInteractionEnd}>
       <div
         className="relative w-full max-w-[1000px] aspect-[16/10] overflow-hidden select-none rounded-lg"
         onMouseMove={handleMouseMove}
@@ -58,13 +52,7 @@ export const ImageComparisonSlider: React.FC<ImageComparisonSliderProps> = ({
         onMouseDown={handleInteractionStart}
         onTouchStart={handleInteractionStart}
       >
-        <Image
-          alt={afterAlt}
-          fill
-          priority
-          src={imageAfter}
-          className="object-cover"
-        />
+        <Image alt={afterAlt} fill src={imageAfter} className="object-cover" sizes="(max-width: 768px) 100vw, 1000px" />
 
         <div
           className="absolute top-0 left-0 w-full h-full overflow-hidden select-none"
@@ -72,10 +60,10 @@ export const ImageComparisonSlider: React.FC<ImageComparisonSliderProps> = ({
         >
           <Image
             fill
-            priority
             alt={beforeAlt}
             src={imageBefore}
             className="object-cover"
+            sizes="(max-width: 768px) 100vw, 1000px"
           />
         </div>
         <div
