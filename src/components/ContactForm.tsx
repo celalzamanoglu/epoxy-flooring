@@ -16,6 +16,7 @@ interface ContactFormData {
   address: string;
   zipCode: string;
   preferredContact: string;
+  consent: boolean;
 }
 
 const ContactForm: React.FC = () => {
@@ -28,6 +29,7 @@ const ContactForm: React.FC = () => {
     address: "",
     zipCode: "",
     preferredContact: "",
+    consent: false,
   });
 
   const [isGettingLocation, setIsGettingLocation] = useState(false);
@@ -37,6 +39,11 @@ const ContactForm: React.FC = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: checked }));
   };
 
   const handleGetLocation = async () => {
@@ -65,6 +72,11 @@ const ContactForm: React.FC = () => {
     // Basic validation
     if (!formData.fullName.trim() || !formData.phoneNumber.trim()) {
       alert("Please fill in all required fields.");
+      return;
+    }
+
+    if (!formData.consent) {
+      alert("Please check the consent box to proceed.");
       return;
     }
 
@@ -100,6 +112,7 @@ const ContactForm: React.FC = () => {
         address: "",
         zipCode: "",
         preferredContact: "",
+        consent: false,
       });
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -349,6 +362,27 @@ const ContactForm: React.FC = () => {
               />
             </div>
           </div>
+        </div>
+
+        {/* Consent Checkbox */}
+        <div>
+          <label htmlFor="consent" style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
+            <input
+              type="checkbox"
+              id="consent"
+              name="consent"
+              checked={formData.consent}
+              onChange={handleCheckboxChange}
+              className={styles.checkbox}
+              style={{ marginTop: "0.25rem" }}
+            />
+            <span>
+              By checking this box, I consent to receive transactional messages related to my ac- count, orders, or
+              services I have requested. These messages may include appointment reminders, order confirmations, and
+              account notifications, among others. Message fre- quency may vary. Message & Data rates may apply. Reply
+              HELP for help or STOP to opt- out.
+            </span>
+          </label>
         </div>
 
         <div className={styles.submitSection}>
