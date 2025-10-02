@@ -175,11 +175,11 @@ const LearnMorePage: React.FC<LearnMorePageProps> = ({ type, showHowItWorks = tr
             <div className={styles.videoContent}>
               <VideoPlayer
                 videoUrl={data.videoUrl}
-                muted={isMobile}
+                muted={true}
                 autoPlayInView={true}
                 loop={true}
+                fullscreen={true}
                 videoType="mobile"
-                fullscreen={isMobile}
               />
             </div>
           )}
