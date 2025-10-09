@@ -19,9 +19,17 @@ import { useIsMobile } from "@/lib/useIsMobile";
 
 export default function Home() {
   const isMobile = useIsMobile();
-  const [showEmailCollector, setShowEmailCollector] = useState(true);
+  const [showEmailCollector, setShowEmailCollector] = useState(false);
 
   useEffect(() => {
+    // Check once per user using localStorage
+    try {
+      const dismissed = typeof window !== "undefined" && localStorage.getItem("emailCollectorDismissed") === "true";
+      setShowEmailCollector(!dismissed);
+    } catch {
+      setShowEmailCollector(true);
+    }
+
     const lenis = new Lenis();
 
     function raf(time: number) {
