@@ -12,6 +12,20 @@ interface EmailCollectorProps {
 
 const EmailCollector: React.FC<EmailCollectorProps> = ({ onClose, isOpen = true }) => {
   const [email, setEmail] = useState("");
+  const storageKey = "emailCollectorDismissed";
+
+  const markDismissed = () => {
+    try {
+      if (typeof window !== "undefined") {
+        localStorage.setItem(storageKey, "true");
+      }
+    } catch {}
+  };
+
+  const handleClose = () => {
+    markDismissed();
+    onClose?.();
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,12 +39,13 @@ const EmailCollector: React.FC<EmailCollectorProps> = ({ onClose, isOpen = true 
       },
       "bAJ0an0KnC_BmMdP9"
     );
+    markDismissed();
     onClose?.();
   };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget && onClose) {
-      onClose();
+      handleClose();
     }
   };
 
@@ -39,6 +54,9 @@ const EmailCollector: React.FC<EmailCollectorProps> = ({ onClose, isOpen = true 
   return (
     <div className={styles.backdrop} onClick={handleBackdropClick}>
       <div className={styles.container}>
+        <button type="button" aria-label="Close" className={styles.closeButton} onClick={handleClose}>
+          ×
+        </button>
         <div className={styles.content}>
           <div className={styles.discountBadge}>$699 OFF</div>
 

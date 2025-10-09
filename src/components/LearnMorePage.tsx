@@ -1,15 +1,13 @@
 "use client";
 
 import React from "react";
-import styles from "./LearnMorePage.module.css";
-import VideoPlayer from "./VideoPlayer";
-import Button from "./Button";
-import Link from "next/link";
+// styles removed after refactor to external component
+import SectionWithTextAndVideo from "./SectionWithTextAndVideo";
 import HexagonSection from "./HexagonSection";
 import HowItWorksSection from "./HowItWorksSection";
 import ResultsSection from "./ResultsSection";
 import Footer from "./Footer";
-import { useIsMobile } from "@/lib/useIsMobile";
+// useIsMobile no longer needed in this component
 
 interface LearnMorePageProps {
   type: string;
@@ -152,53 +150,11 @@ const serviceData: Record<string, ServiceData> = {
 const LearnMorePage: React.FC<LearnMorePageProps> = ({ type, showHowItWorks = true }) => {
   const data = serviceData[type] || serviceData["metallic-epoxy"];
 
-  const isMobile = useIsMobile();
+  // isMobile removed; handled inside SectionWithTextAndVideo
 
   return (
     <main className="mt-[50vh] mb-[100vh] bg-[#1C1C1C]">
-      {/* Hero and Video Section - Side by Side on Desktop */}
-      <section className={styles.heroVideoSection}>
-        <div className={`${styles.heroVideoContainer} ${data.videoUrl ? styles.withVideo : styles.withoutVideo}`}>
-          {/* Hero Content - Left Side */}
-          <div className={styles.heroContent}>
-            <h1 className={styles.title}>{data.title}</h1>
-            <p className={styles.description}>{data.description}</p>
-            <div className={styles.ctaButtonWrapper}>
-              <Link href="/contact">
-                <Button>CONTACT US</Button>
-              </Link>
-            </div>
-          </div>
-
-          {/* Video - Right Side */}
-          {data.videoUrl && (
-            <div className={styles.videoContent}>
-              <VideoPlayer
-                videoUrl={data.videoUrl}
-                muted={isMobile}
-                autoPlayInView={true}
-                loop={true}
-                videoType="mobile"
-                fullscreen={isMobile}
-              />
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Mobile Video - Outside containers */}
-      {data.videoUrl && (
-        <div className={styles.mobileVideoWrapper}>
-          <VideoPlayer
-            videoUrl={data.videoUrl}
-            muted={isMobile}
-            autoPlayInView={true}
-            loop={true}
-            videoType="mobile"
-            fullscreen={isMobile}
-          />
-        </div>
-      )}
+      <SectionWithTextAndVideo title={data.title} description={data.description} videoUrl={data.videoUrl} />
 
       {/* Hexagon Section */}
       <HexagonSection
