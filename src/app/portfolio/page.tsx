@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import Image from "next/image";
-import { useScroll, useTransform, motion, MotionValue } from "framer-motion"; /* 
+import { useScroll, useTransform, motion, MotionValue, MotionStyle } from "framer-motion"; /*
 import Lenis from "lenis"; */
 
 import Footer from "@/components/Footer";
@@ -95,10 +95,22 @@ const PortfolioPage: React.FC = () => {
       index === 0 ? [0, -5] : [5, 0]
     );
 
-    const sectionClassName = index === 0 ? "sticky top-0 h-screen" : "relative h-screen";
+    // The first image is the sticky backdrop, but only during its own transition.
+    // Once the next image has scrolled over it, fade it out so the page
+    // background — not the first image — shows through later transition gaps.
+    const opacity = useTransform(
+      scrollYProgress,
+      [segmentEnd * 0.9, segmentEnd],
+      [1, 0]
+    );
+
+    const sectionClassName =
+      index === 0 ? "sticky top-0 h-screen" : "relative h-screen";
+    const motionStyle: MotionStyle =
+      index === 0 ? { scale, rotate, opacity } : { scale, rotate };
 
     return (
-      <motion.div style={{ scale, rotate }} className={sectionClassName}>
+      <motion.div style={motionStyle} className={sectionClassName}>
         <Image
           src={src}
           alt="Featured epoxy flooring project"
