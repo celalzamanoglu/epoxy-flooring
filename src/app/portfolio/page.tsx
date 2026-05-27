@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import Image from "next/image";
-import { useScroll, useTransform, motion, MotionValue } from "framer-motion"; /* 
+import { useScroll, useTransform, motion, MotionValue, MotionStyle } from "framer-motion"; /*
 import Lenis from "lenis"; */
 
 import Footer from "@/components/Footer";
@@ -43,6 +43,30 @@ const PortfolioPage: React.FC = () => {
     "/portfolio/IMG_4585.PNG",
     "/portfolio/IMG_4586.PNG",
     "/portfolio/IMG_4759.PNG",
+    "/portfolio/IMG_1735.PNG",
+    "/portfolio/IMG_1737.PNG",
+    "/portfolio/IMG_1738.PNG",
+    "/portfolio/IMG_1739.PNG",
+    "/portfolio/IMG_1740.PNG",
+    "/portfolio/IMG_1741.PNG",
+    "/portfolio/IMG_1742.PNG",
+    "/portfolio/IMG_1743.PNG",
+    "/portfolio/IMG_1744.PNG",
+    "/portfolio/IMG_1745.PNG",
+    "/portfolio/IMG_1746.PNG",
+    "/portfolio/IMG_1747.PNG",
+    "/portfolio/IMG_1748.PNG",
+    "/portfolio/IMG_1749.PNG",
+    "/portfolio/IMG_1750.PNG",
+    "/portfolio/IMG_1751.PNG",
+    "/portfolio/IMG_1752.PNG",
+    "/portfolio/IMG_1753.PNG",
+    "/portfolio/IMG_1754.PNG",
+    "/portfolio/IMG_1755.PNG",
+    "/portfolio/IMG_1756.PNG",
+    "/portfolio/IMG_4559.jpg",
+    "/portfolio/IMG_4661.jpg",
+    "/portfolio/IMG_4662.jpg",
   ];
 
   const PortfolioImageSection = ({
@@ -71,16 +95,29 @@ const PortfolioPage: React.FC = () => {
       index === 0 ? [0, -5] : [5, 0]
     );
 
-    const sectionClassName = index === 0 ? "sticky top-0 h-screen" : "relative h-screen";
+    // The first image is the sticky backdrop, but only during its own transition.
+    // Once the next image has scrolled over it, fade it out so the page
+    // background — not the first image — shows through later transition gaps.
+    const opacity = useTransform(
+      scrollYProgress,
+      [segmentEnd * 0.9, segmentEnd],
+      [1, 0]
+    );
+
+    const sectionClassName =
+      index === 0 ? "sticky top-0 h-screen" : "relative h-screen";
+    const motionStyle: MotionStyle =
+      index === 0 ? { scale, rotate, opacity } : { scale, rotate };
 
     return (
-      <motion.div style={{ scale, rotate }} className={sectionClassName}>
+      <motion.div style={motionStyle} className={sectionClassName}>
         <Image
           src={src}
           alt="Featured epoxy flooring project"
           fill
           style={{ objectFit: "cover" }}
           sizes="100vw"
+          quality={65}
           priority={index === 0}
         />
       </motion.div>
